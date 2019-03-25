@@ -35,8 +35,32 @@ enum Top: Int {
             return "측정이 완료되었습니다."
         }
     }
+}
+
+enum Bottom: Int {
+    case waist
+    case hip
+    case 허벅지둘레
+    case 총기장
+    case 밑단
+    case done
     
-    static var count = 5
+    var label: String {
+        switch self {
+        case .waist:
+            return "허리둘레"
+        case .hip:
+            return "엉덩이둘레"
+        case .허벅지둘레:
+            return "허벅지둘레"
+        case .총기장:
+            return "총 기장"
+        case .밑단:
+            return "밑단"
+        case .done:
+            return "측정이 완료되었습니다."
+        }
+    }
 }
 
 enum MeasuringState {
