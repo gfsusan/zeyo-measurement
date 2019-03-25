@@ -20,6 +20,7 @@
 		084FBCC222446C7600D86C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */; };
 		084FBCCB2244708000D86C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCA2244708000D86C50 /* ViewController.swift */; };
 		084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCE2244710E00D86C50 /* AppDelegate.swift */; };
+		084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCD22248A56D00D86C50 /* SelectVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		084FBCCA2244708000D86C50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		084FBCCE2244710E00D86C50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		084FBCD22248A56D00D86C50 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				084FBCA622446B5C00D86C50 /* Assets.scnassets */,
 				084FBCA722446B5C00D86C50 /* Assets.xcassets */,
 				084FBC9F22446B3A00D86C50 /* Info.plist */,
+				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
 			);
 			path = ZeyoMeasurement;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				084FBCB922446B6C00D86C50 /* Plane.swift in Sources */,
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
+				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

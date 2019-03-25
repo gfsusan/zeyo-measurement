@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eIu-np-qLy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q49-NB-5Kf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SelectVC-->
+        <scene sceneID="2Mm-KT-iYw">
+            <objects>
+                <viewController id="Q49-NB-5Kf" customClass="SelectVC" customModule="ZeyoMeasurement" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rqw-7e-TXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="55j-em-A8t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ocA-Uq-ZQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="DMY-oi-oeI">
+                                <rect key="frame" x="91" y="293.5" width="193" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-GL-aXc">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Ddb-MR-KLS"/>
+                                            <constraint firstAttribute="height" constant="80" id="pig-Rw-eyI"/>
+                                        </constraints>
+                                        <state key="normal" title="상의"/>
+                                        <connections>
+                                            <action selector="topPressed:" destination="Q49-NB-5Kf" eventType="touchUpInside" id="mPc-Xg-qGR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giB-Ak-qVc">
+                                        <rect key="frame" x="113" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3vI-Iy-Q2F"/>
+                                            <constraint firstAttribute="height" constant="80" id="RnJ-XB-PIl"/>
+                                        </constraints>
+                                        <state key="normal" title="하의"/>
+                                        <connections>
+                                            <action selector="bottomPressed:" destination="Q49-NB-5Kf" eventType="touchUpInside" id="yLW-An-QBN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DMY-oi-oeI" firstAttribute="centerY" secondItem="ocA-Uq-ZQ1" secondAttribute="centerY" id="Ubb-v6-3I9"/>
+                            <constraint firstItem="DMY-oi-oeI" firstAttribute="centerX" secondItem="ocA-Uq-ZQ1" secondAttribute="centerX" id="aBy-qN-OV9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deo-fY-Flb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268" y="-223"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="gpu-NC-Kut">
             <objects>
