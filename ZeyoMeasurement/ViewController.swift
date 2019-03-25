@@ -36,14 +36,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     private let secondName = "secondAnchor"
     
     var currentState: MeasuringState = .initialized
-    var currentBodyPart: BodyPart = .neck
+    var currentBodyPart: Top = .neck
     var currentUnit: Unit = .centimeter
     
     var currentMeasurementAnchor: MeasurementAnchor?
     
     var selectedNode: SCNNode?
     
-    var measurements: [BodyPart : MeasurementAnchor] = [:]
+    var measurements: [Top : MeasurementAnchor] = [:]
     
     enum BodyType : Int {
         case ObjectModel = 2;
@@ -135,13 +135,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
-        if let previousBodyPart = BodyPart(rawValue: currentBodyPart.rawValue - 1) {
+        if let previousBodyPart = Top(rawValue: currentBodyPart.rawValue - 1) {
             switchMode(to: .initialized, measuring: previousBodyPart)
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if let nextBodyPart = BodyPart(rawValue: currentBodyPart.rawValue + 1) {
+        if let nextBodyPart = Top(rawValue: currentBodyPart.rawValue + 1) {
             switchMode(to: .initialized, measuring: nextBodyPart)
         } else {
             // all measurements were successfully made

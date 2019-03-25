@@ -18,7 +18,7 @@ extension ViewController {
     /**
      Setup for mode.
      */
-    func switchMode(to mode: MeasuringState, measuring bodyPart: BodyPart) {
+    func switchMode(to mode: MeasuringState, measuring bodyPart: Top) {
         self.currentState = mode
         self.currentBodyPart = bodyPart
         
@@ -58,7 +58,7 @@ extension ViewController {
     func updateUI() {
         self.setInstructionLabel()
         
-        if currentBodyPart == BodyPart(rawValue: 0) {
+        if currentBodyPart == Top(rawValue: 0) {
             previousButton.isEnabled = false
         } else {
             previousButton.isEnabled = true

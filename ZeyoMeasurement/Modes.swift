@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BodyPart: Int {
+enum Top: Int {
     case neck
     case shoulder
     case armhole
