@@ -35,15 +35,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     private let firstName = "firstAnchor"
     private let secondName = "secondAnchor"
     
-    var currentState: MeasuringState = .initialized
-    var currentBodyPart: Top = .neck
-    var currentUnit: Unit = .centimeter
+    var currentCategory     : Category?
     
+    var currentTopPart      : Top = .neck
+    var currentBottomPart   : Bottom = .waist
+    
+    var currentUnit         : Unit = .centimeter
+    
+    var topMeasurements     : [Top    : MeasurementAnchor]  = [:]
+    var bottomeMeasurements : [Bottom : MeasurementAnchor]  = [:]
+    var currentState        : MeasuringState                = .initialized
+
     var currentMeasurementAnchor: MeasurementAnchor?
-    
+
     var selectedNode: SCNNode?
-    
-    var measurements: [Top : MeasurementAnchor] = [:]
+
     
     enum BodyType : Int {
         case ObjectModel = 2;
@@ -128,20 +134,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             }
             
             // switch mode
-            self.switchMode(to: .started, measuring: currentBodyPart)
+            self.switchMode(to: .started, measuring: currentTopPart)
         }
         
 
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
-        if let previousBodyPart = Top(rawValue: currentBodyPart.rawValue - 1) {
+        if let previousBodyPart = Top(rawValue: currentTopPart.rawValue - 1) {
             switchMode(to: .initialized, measuring: previousBodyPart)
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if let nextBodyPart = Top(rawValue: currentBodyPart.rawValue + 1) {
+        if let nextBodyPart = Top(rawValue: currentTopPart.rawValue + 1) {
             switchMode(to: .initialized, measuring: nextBodyPart)
         } else {
             // all measurements were successfully made
@@ -153,9 +159,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBAction func resetButtonPressed(_ sender: Any) {
         // this sequence must be maintained
         clearSceneView()
-        measurements.removeValue(forKey: currentBodyPart)
+        topMeasurements.removeValue(forKey: currentTopPart)
 
-        switchMode(to: .initialized, measuring: currentBodyPart)        
+        switchMode(to: .initialized, measuring: currentTopPart)        
     }
     
     @objc func moved(recognizer: UILongPressGestureRecognizer) {
@@ -242,9 +248,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 sceneView.scene.rootNode.addChildNode(newLine)
             }
             
-            measurements[currentBodyPart] = currentMeasurement
+            topMeasurements[currentTopPart] = currentMeasurement
             
-            switchMode(to: .finished, measuring: currentBodyPart)
+            switchMode(to: .finished, measuring: currentTopPart)
         }
         
     

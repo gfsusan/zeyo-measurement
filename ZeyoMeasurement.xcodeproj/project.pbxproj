@@ -75,16 +75,15 @@
 				084FBCCE2244710E00D86C50 /* AppDelegate.swift */,
 				084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */,
 				084FBCBF22446C7600D86C50 /* Main.storyboard */,
+				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
 				084FBCCA2244708000D86C50 /* ViewController.swift */,
 				084FBCB322446B6C00D86C50 /* ViewControllerExtension.swift */,
 				084FBCC322446C9900D86C50 /* Apple */,
 				084FBCC622446CB600D86C50 /* SceneKit */,
 				084FBCB022446B6C00D86C50 /* Modes.swift */,
-				084FBCA922446B5C00D86C50 /* Extensions.swift */,
 				084FBCA622446B5C00D86C50 /* Assets.scnassets */,
 				084FBCA722446B5C00D86C50 /* Assets.xcassets */,
 				084FBC9F22446B3A00D86C50 /* Info.plist */,
-				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
 			);
 			path = ZeyoMeasurement;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 			children = (
 				084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */,
 				084FBCB122446B6C00D86C50 /* LineNode.swift */,
+				084FBCA922446B5C00D86C50 /* Extensions.swift */,
 			);
 			name = SceneKit;
 			sourceTree = "<group>";

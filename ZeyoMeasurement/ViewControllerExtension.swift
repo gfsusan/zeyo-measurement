@@ -18,16 +18,16 @@ extension ViewController {
     /**
      Setup for mode.
      */
-    func switchMode(to mode: MeasuringState, measuring bodyPart: Top) {
+    func switchMode(to mode: MeasuringState, measuring topPart: Top) {
         self.currentState = mode
-        self.currentBodyPart = bodyPart
+        self.currentTopPart = topPart
         
         switch (mode) {
         case .initialized:
             // clear all nodes
             self.clearSceneView()
             
-            if let currentMeasurement = measurements[currentBodyPart] {
+            if let currentMeasurement = topMeasurements[currentTopPart] {
                 print("restored saved anchors")
                 self.currentMeasurementAnchor = currentMeasurement
                 
@@ -58,7 +58,7 @@ extension ViewController {
     func updateUI() {
         self.setInstructionLabel()
         
-        if currentBodyPart == Top(rawValue: 0) {
+        if currentTopPart == Top(rawValue: 0) {
             previousButton.isEnabled = false
         } else {
             previousButton.isEnabled = true
@@ -84,7 +84,7 @@ extension ViewController {
             }
         }
         
-        if currentBodyPart == .done {
+        if currentTopPart == .done {
             createPointButton.isEnabled = false
             nextButton.isEnabled = false
         }
@@ -120,10 +120,10 @@ extension ViewController {
         instructionView.alpha = 0.0
 
         // Show the body part that the user is measuring in a UILabel
-        if currentBodyPart == .done {
+        if currentTopPart == .done {
             // 다끝났을 ~~ 때 ~~~~
             var labelText = "측정 결과"
-            for (part, measurement) in measurements {
+            for (part, measurement) in topMeasurements {
                 labelText += "\n\(part.label): "
                 if let length = measurement.lengthIn(unit: currentUnit) {
                     labelText += "\(length)\(currentUnit.label)"
@@ -134,9 +134,9 @@ extension ViewController {
         } else {
             switch (currentState) {
             case .initialized:
-                instructionLabel.text = "\(currentBodyPart.label) 길이의 시작점을 찍어주세요."
+                instructionLabel.text = "\(currentTopPart.label) 길이의 시작점을 찍어주세요."
             case .started:
-                instructionLabel.text = "\(currentBodyPart.label) 길이의 끝점을 찍어주세요."
+                instructionLabel.text = "\(currentTopPart.label) 길이의 끝점을 찍어주세요."
             case .finished:
                 if let currentMeasurement = currentMeasurementAnchor {
                     if let length = currentMeasurement.lengthIn(unit: currentUnit) {
