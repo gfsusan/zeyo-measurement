@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		084FBCAB22446B5C00D86C50 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCA622446B5C00D86C50 /* Assets.scnassets */; };
-		084FBCAC22446B5C00D86C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCA722446B5C00D86C50 /* Assets.xcassets */; };
 		084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCA922446B5C00D86C50 /* Extensions.swift */; };
 		084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */; };
 		084FBCB722446B6C00D86C50 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCB022446B6C00D86C50 /* Modes.swift */; };
@@ -20,13 +19,13 @@
 		084FBCC222446C7600D86C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */; };
 		084FBCCB2244708000D86C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCA2244708000D86C50 /* ViewController.swift */; };
 		084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCE2244710E00D86C50 /* AppDelegate.swift */; };
+		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		084FBC8E22446B3900D86C50 /* ZeyoMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeyoMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		084FBC9F22446B3A00D86C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		084FBCA622446B5C00D86C50 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
-		084FBCA722446B5C00D86C50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../MeasureARKit/ARSampleApp/Assets.xcassets; sourceTree = "<group>"; };
 		084FBCA922446B5C00D86C50 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementAnchor.swift; sourceTree = "<group>"; };
 		084FBCB022446B6C00D86C50 /* Modes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modes.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		084FBCCA2244708000D86C50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		084FBCCE2244710E00D86C50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 		084FBC9022446B3900D86C50 /* ZeyoMeasurement */ = {
 			isa = PBXGroup;
 			children = (
+				08DB9C8E224A274200F9A9FB /* Assets.xcassets */,
 				084FBCCE2244710E00D86C50 /* AppDelegate.swift */,
 				084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */,
 				084FBCBF22446C7600D86C50 /* Main.storyboard */,
@@ -80,7 +81,6 @@
 				084FBCB022446B6C00D86C50 /* Modes.swift */,
 				084FBCA922446B5C00D86C50 /* Extensions.swift */,
 				084FBCA622446B5C00D86C50 /* Assets.scnassets */,
-				084FBCA722446B5C00D86C50 /* Assets.xcassets */,
 				084FBC9F22446B3A00D86C50 /* Info.plist */,
 			);
 			path = ZeyoMeasurement;
@@ -164,8 +164,8 @@
 			files = (
 				084FBCAB22446B5C00D86C50 /* Assets.scnassets in Resources */,
 				084FBCC122446C7600D86C50 /* Main.storyboard in Resources */,
+				08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */,
 				084FBCC222446C7600D86C50 /* LaunchScreen.storyboard in Resources */,
-				084FBCAC22446B5C00D86C50 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
