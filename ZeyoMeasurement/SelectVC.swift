@@ -39,7 +39,9 @@ class SelectVC: UIViewController {
         // Pass the selected object to the new view controller.
         let arVC = segue.destination as? ViewController
         
-        arVC?.currentCategory = self.category
+        if let category = self.category {
+            arVC?.currentCategory = category
+        }
     }
 
 }

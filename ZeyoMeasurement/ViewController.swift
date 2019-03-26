@@ -35,7 +35,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     private let firstName = "firstAnchor"
     private let secondName = "secondAnchor"
     
-    var currentCategory     : Category?
+    var currentCategory     : Category = .top
     
     var currentTopPart      : Top = .neck
     var currentBottomPart   : Bottom = .waist

@@ -19,13 +19,28 @@ extension ViewController {
      Setup for mode.
      */
     func switchMode(to mode: MeasuringState, measuring topPart: Top) {
+        // Set mode
         self.currentState = mode
+        
+        // Set part to measure according to selected category
+        switch currentCategory {
+        case .top:
+            if let nextTopPart = Top(rawValue: currentTopPart.rawValue + 1) {
+                self.currentTopPart = nextTopPart
+            }
+        case .bottom:
+            if let nextBottomPart = Bottom(rawValue: currentBottomPart.rawValue + 1) {
+                self.currentBottomPart = nextBottomPart
+            }
+        }
+        
         self.currentTopPart = topPart
         
         switch (mode) {
         case .initialized:
             // clear all nodes
             self.clearSceneView()
+            
             
             if let currentMeasurement = topMeasurements[currentTopPart] {
                 print("restored saved anchors")

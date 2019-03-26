@@ -8,6 +8,34 @@
 
 import Foundation
 
+class MeasuringManager {
+    let category: Category
+    
+    let bodyParts: [String]
+    
+    var state: MeasuringState
+    var measurements: [String : MeasurementAnchor] = [:]
+    
+    init(category: Category) {
+        self.category = category
+        if category == .top {
+            bodyParts = [Top.neck.label, ]
+        } else if category == .bottom {
+            bodyParts = []
+        } else {
+            bodyParts = []
+        }
+        self.state = .initialized
+    }
+    
+    
+}
+
+enum Category: Int {
+    case top
+    case bottom
+}
+
 enum Top: Int {
     case neck
     case shoulder
