@@ -49,7 +49,9 @@ extension ViewController {
         }
         
         // update UI to match current state
-        updateUI()
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
     }
     
     /**

@@ -121,9 +121,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             if let newAnchor = currentMeasurement.secondAnchor {
                 self.sceneView.session.add(anchor: newAnchor)
             }
-            
-            // switch mode in renderer
-//            self.switchMode(to: .finished, measuring: currentBodyPart)
         } else { // if no anchors exist
             guard currentState == .initialized else {
                 fatalError("Anchor status and mode no not match")
@@ -132,10 +129,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             if let newAnchor = currentMeasurement.firstAnchor {
                 self.sceneView.session.add(anchor: newAnchor)
             }
-            
-            // switch mode
-            self.switchMode(to: .started, measuring: currentTopPart)
         }
+        
+        // switch mode in renderer
         
 
     }
@@ -251,6 +247,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             topMeasurements[currentTopPart] = currentMeasurement
             
             switchMode(to: .finished, measuring: currentTopPart)
+        } else if let _ = currentMeasurement.firstAnchor {
+            switchMode(to: .started, measuring: currentTopPart)
         }
         
     
