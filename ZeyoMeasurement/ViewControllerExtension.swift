@@ -23,8 +23,8 @@ extension ViewController {
         
         switch (mode) {
         case .initialized:
-            // clear all nodes
-            self.clearSceneView()
+            // uncomment to clear all nodes when switching parts
+            // self.clearSceneView()
             
             if part == .done {
                 self.currentMeasurementAnchor = nil
