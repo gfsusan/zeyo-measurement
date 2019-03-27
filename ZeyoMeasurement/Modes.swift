@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Category: Int {
     case top
@@ -50,6 +51,33 @@ enum Part: Int {
             return "밑단"
         case .done:
             return "측정이 완료되었습니다."
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .neck:
+            return UIColor.red
+        case .shoulder:
+            return UIColor.orange
+        case .armhole:
+            return UIColor.yellow
+        case .sleeveLength:
+            return UIColor.green
+        case .sleeveWidth:
+            return UIColor.blue
+        case .waist:
+            return UIColor.purple
+        case .hip:
+            return UIColor.brown
+        case .허벅지둘레:
+            return UIColor.magenta
+        case .밑단:
+            return UIColor.cyan
+        case .length:
+            return UIColor.planeColor
+        case .done:
+            return UIColor.black
         }
     }
 }
