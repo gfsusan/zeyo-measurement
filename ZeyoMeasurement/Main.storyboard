@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q49-NB-5Kf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q49-NB-5Kf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,9 +79,9 @@
                                 </connections>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-PF-rsd">
-                                <rect key="frame" x="61" y="36" width="259" height="38"/>
+                                <rect key="frame" x="61" y="36" width="259.5" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qY8-rk-rbB">
-                                    <rect key="frame" x="0.0" y="0.0" width="259" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="259.5" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure the length of blahblah" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7B-vy-ezp">
@@ -190,6 +190,20 @@
                                     <action selector="resetButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="q29-7l-iVb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-df-Fao">
+                                <rect key="frame" x="8" y="36" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="Voc-oM-z7p"/>
+                                    <constraint firstAttribute="height" constant="22" id="rSQ-0f-7Fl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="NDX-Nl-B8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -201,9 +215,11 @@
                             <constraint firstItem="cSe-eq-NAh" firstAttribute="centerX" secondItem="ZRt-Yj-zIU" secondAttribute="centerX" id="Y7x-6t-obr"/>
                             <constraint firstItem="YVH-fr-L4V" firstAttribute="bottom" secondItem="cSe-eq-NAh" secondAttribute="bottom" constant="32" id="aqO-bw-g0t"/>
                             <constraint firstItem="cSe-eq-NAh" firstAttribute="top" secondItem="GRk-Hk-7wG" secondAttribute="bottom" constant="8" id="crd-PL-uJK"/>
+                            <constraint firstItem="BAv-df-Fao" firstAttribute="leading" secondItem="YVH-fr-L4V" secondAttribute="leading" constant="8" id="eKr-yv-dOr"/>
                             <constraint firstAttribute="bottom" secondItem="qx1-oK-MGp" secondAttribute="bottom" id="hAX-3o-Fgy"/>
                             <constraint firstItem="E7B-vy-ezp" firstAttribute="centerX" secondItem="qx1-oK-MGp" secondAttribute="centerX" id="hN4-qA-sbm"/>
                             <constraint firstItem="it1-nx-ufO" firstAttribute="centerY" secondItem="ZRt-Yj-zIU" secondAttribute="centerY" id="lLd-bU-CfK"/>
+                            <constraint firstItem="BAv-df-Fao" firstAttribute="top" secondItem="kHq-PF-rsd" secondAttribute="top" id="qBl-uu-JBM"/>
                             <constraint firstItem="GRk-Hk-7wG" firstAttribute="centerX" secondItem="73Y-CK-65k" secondAttribute="centerX" id="yb8-mv-cvg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVH-fr-L4V"/>
