@@ -27,6 +27,18 @@ extension SCNVector3: Equatable {
     }
 }
 
+extension SCNNode {
+    func setSelected() {
+        self.geometry?.firstMaterial?.transparency = 0.5
+        
+        let centerShape = SCNSphere(radius: 0.001)
+        let centerNode = SCNNode(geometry: centerShape)
+        centerNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        self.addChildNode(centerNode)
+    }
+    
+}
+
 extension ARAnchor {
     func position() -> SCNVector3 {
         return SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
