@@ -155,6 +155,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @objc func longPressed(recognizer: UILongPressGestureRecognizer) {
         guard let recognizerView = recognizer.view as? ARSCNView else { return }
         let touch = recognizer.location(in: recognizerView)
+        let transform = CGAffineTransform(translationX: 0, y: -50)
+        let aboveTouch = touch.applying(transform)
         
         // Keep pressing
         if recognizer.state == .began {
@@ -178,10 +180,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 }
             }
             
+            // change node transparency + aim
+            selectedNode?.geometry?.firstMaterial?.transparency = 0.5
+            
         } else if recognizer.state == .changed {
             
             guard let hitNode = self.selectedNode else { return }
-            let hitTestPlane = self.sceneView.hitTest(touch, types: .existingPlane)
+            let hitTestPlane = self.sceneView.hitTest(aboveTouch, types: .existingPlane)
             guard let hitPlane = hitTestPlane.first else { return }
             hitNode.position = SCNVector3(hitPlane.worldTransform.columns.3.x,
                                                hitNode.position.y,
