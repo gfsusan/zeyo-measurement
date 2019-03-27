@@ -42,6 +42,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     var currentMeasurementAnchor: MeasurementAnchor? = MeasurementAnchor()
     var selectedNode: SCNNode?
 
+    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
     
     enum BodyType : Int {
         case ObjectModel = 2;

@@ -28,6 +28,7 @@ extension ViewController {
             
             if part == .done {
                 self.currentMeasurementAnchor = nil
+                self.sceneView.removeGestureRecognizer(longPressRecognizer)
             }
             else if let currentMeasurement = manager.currentMeasurementAnchor() {
                 print("restored saved anchors")
@@ -172,7 +173,6 @@ extension ViewController {
     }
     
     func setupGestureRecognizers() {
-        let moveRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
-        self.sceneView.addGestureRecognizer(moveRecognizer)
+        self.sceneView.addGestureRecognizer(longPressRecognizer)
     }
 }
