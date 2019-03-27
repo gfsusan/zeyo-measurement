@@ -21,6 +21,7 @@
 		084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCE2244710E00D86C50 /* AppDelegate.swift */; };
 		084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCD22248A56D00D86C50 /* SelectVC.swift */; };
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
+		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		084FBCCE2244710E00D86C50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		084FBCD22248A56D00D86C50 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		084FBC9022446B3900D86C50 /* ZeyoMeasurement */ = {
 			isa = PBXGroup;
 			children = (
+				08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */,
 				08DB9C8E224A274200F9A9FB /* Assets.xcassets */,
 				084FBCCE2244710E00D86C50 /* AppDelegate.swift */,
 				084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */,
 				084FBCCB2244708000D86C50 /* ViewController.swift in Sources */,
 				084FBCB822446B6C00D86C50 /* LineNode.swift in Sources */,
 				084FBCB722446B6C00D86C50 /* Modes.swift in Sources */,

@@ -35,7 +35,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     private let firstName = "firstAnchor"
     private let secondName = "secondAnchor"
     
-    var manager: ModeManager!
+    var manager: MeasureManager!
 
     var currentUnit: Unit = .centimeter
     
