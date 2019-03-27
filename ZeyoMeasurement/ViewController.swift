@@ -168,11 +168,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             
             // Set hitNode as selected
             self.selectedNode = hitNode
-            let originalScale = hitNode.scale
-            let scaleVector = SCNVector3Make(originalScale.x * 2,
-                                             originalScale.y * 2,
-                                             originalScale.z * 2)
-            hitNode.scale = scaleVector
+            
+            // change node transparency + aim
+            selectedNode?.setSelected()
             
             // Remove line node
             if let currentMeasurement = currentMeasurementAnchor {
@@ -181,8 +179,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 }
             }
             
-            // change node transparency + aim
-            selectedNode?.setSelected()
             
         } else if recognizer.state == .changed {
             
