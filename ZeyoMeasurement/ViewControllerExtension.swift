@@ -64,7 +64,11 @@ extension ViewController {
         self.setInstructionLabel()
         
         if let _ = manager.previousPart() {
-            previousButton.isEnabled = true
+            if manager.state == .started {
+                previousButton.isEnabled = false
+            } else {
+                previousButton.isEnabled = true
+            }
         } else {
             previousButton.isEnabled = false
         }
