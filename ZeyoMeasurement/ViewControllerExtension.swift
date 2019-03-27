@@ -18,31 +18,18 @@ extension ViewController {
     /**
      Setup for mode.
      */
-    func switchMode(to mode: MeasuringState, measuring topPart: Top) {
-        // Set mode
-        self.currentState = mode
-        
-        // Set part to measure according to selected category
-        switch currentCategory {
-        case .top:
-            if let nextTopPart = Top(rawValue: currentTopPart.rawValue + 1) {
-                self.currentTopPart = nextTopPart
-            }
-        case .bottom:
-            if let nextBottomPart = Bottom(rawValue: currentBottomPart.rawValue + 1) {
-                self.currentBottomPart = nextBottomPart
-            }
-        }
-        
-        self.currentTopPart = topPart
+    func switchMode(to mode: MeasuringState, measuring part: Part) {
+        manager.switchMode(to: mode, measuring: part)
         
         switch (mode) {
         case .initialized:
             // clear all nodes
             self.clearSceneView()
             
-            
-            if let currentMeasurement = topMeasurements[currentTopPart] {
+            if part == .done {
+                self.currentMeasurementAnchor = nil
+            }
+            else if let currentMeasurement = manager.currentMeasurementAnchor() {
                 print("restored saved anchors")
                 self.currentMeasurementAnchor = currentMeasurement
                 
@@ -53,7 +40,8 @@ extension ViewController {
                 self.sceneView.session.add(anchor: firstAnchor)
                 self.sceneView.session.add(anchor: secondAnchor)
                 
-                self.currentState = .finished
+                // set mode to finished since two anchors are loaded
+                manager.switchMode(to: .finished, measuring: part)
             } else {
                 self.currentMeasurementAnchor = MeasurementAnchor()
             }
@@ -75,10 +63,10 @@ extension ViewController {
     func updateUI() {
         self.setInstructionLabel()
         
-        if currentTopPart == Top(rawValue: 0) {
-            previousButton.isEnabled = false
-        } else {
+        if let _ = manager.previousPart() {
             previousButton.isEnabled = true
+        } else {
+            previousButton.isEnabled = false
         }
         
         if let currentMeasurement = currentMeasurementAnchor {
@@ -101,7 +89,7 @@ extension ViewController {
             }
         }
         
-        if currentTopPart == .done {
+        if manager.currentPart == .done {
             createPointButton.isEnabled = false
             nextButton.isEnabled = false
         }
@@ -137,10 +125,10 @@ extension ViewController {
         instructionView.alpha = 0.0
 
         // Show the body part that the user is measuring in a UILabel
-        if currentTopPart == .done {
+        if manager.currentPart == .done {
             // 다끝났을 ~~ 때 ~~~~
             var labelText = "측정 결과"
-            for (part, measurement) in topMeasurements {
+            for (part, measurement) in manager.measurements {
                 labelText += "\n\(part.label): "
                 if let length = measurement.lengthIn(unit: currentUnit) {
                     labelText += "\(length)\(currentUnit.label)"
@@ -149,11 +137,11 @@ extension ViewController {
             
             instructionLabel.text = labelText
         } else {
-            switch (currentState) {
+            switch (manager.state) {
             case .initialized:
-                instructionLabel.text = "\(currentTopPart.label) 길이의 시작점을 찍어주세요."
+                instructionLabel.text = "\(manager.currentPart.label) 길이의 시작점을 찍어주세요."
             case .started:
-                instructionLabel.text = "\(currentTopPart.label) 길이의 끝점을 찍어주세요."
+                instructionLabel.text = "\(manager.currentPart.label) 길이의 끝점을 찍어주세요."
             case .finished:
                 if let currentMeasurement = currentMeasurementAnchor {
                     if let length = currentMeasurement.lengthIn(unit: currentUnit) {

@@ -35,19 +35,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     private let firstName = "firstAnchor"
     private let secondName = "secondAnchor"
     
-    var currentCategory     : Category = .top
-    
-    var currentTopPart      : Top = .neck
-    var currentBottomPart   : Bottom = .waist
-    
-    var currentUnit         : Unit = .centimeter
-    
-    var topMeasurements     : [Top    : MeasurementAnchor]  = [:]
-    var bottomeMeasurements : [Bottom : MeasurementAnchor]  = [:]
-    var currentState        : MeasuringState                = .initialized
+    var manager: ModeManager!
 
-    var currentMeasurementAnchor: MeasurementAnchor?
-
+    var currentUnit: Unit = .centimeter
+    
+    var currentMeasurementAnchor: MeasurementAnchor? = MeasurementAnchor()
     var selectedNode: SCNNode?
 
     
@@ -82,8 +74,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         super.viewDidLoad()
     
         setupGestureRecognizers()
-        switchMode(to: .initialized, measuring: .neck)
         switchUnit(to: .centimeter)
+        updateUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,11 +102,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         guard let hitTestResult = sceneView.hitTest(touch, types: .existingPlane).first else { return }
         
         if let _ = currentMeasurement.firstAnchor, let _ = currentMeasurement.secondAnchor {
-            guard currentState == .finished else {
+            guard manager.state == .finished else {
                 fatalError("Anchor status and mode no not match")
             }
         } else if let _ = currentMeasurement.firstAnchor {
-            guard currentState == .started else {
+            guard manager.state == .started else {
                 fatalError("Anchor status and mode no not match")
             }
             currentMeasurement.secondAnchor = ARAnchor(name: secondName, transform: hitTestResult.worldTransform)
@@ -122,7 +114,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 self.sceneView.session.add(anchor: newAnchor)
             }
         } else { // if no anchors exist
-            guard currentState == .initialized else {
+            guard manager.state == .initialized else {
                 fatalError("Anchor status and mode no not match")
             }
             currentMeasurement.firstAnchor = ARAnchor(name: firstName, transform: hitTestResult.worldTransform)
@@ -137,13 +129,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
-        if let previousBodyPart = Top(rawValue: currentTopPart.rawValue - 1) {
+        if let previousBodyPart = manager?.previousPart() {
             switchMode(to: .initialized, measuring: previousBodyPart)
         }
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if let nextBodyPart = Top(rawValue: currentTopPart.rawValue + 1) {
+        if let nextBodyPart = manager?.nextPart() {
             switchMode(to: .initialized, measuring: nextBodyPart)
         } else {
             // all measurements were successfully made
@@ -155,9 +147,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBAction func resetButtonPressed(_ sender: Any) {
         // this sequence must be maintained
         clearSceneView()
-        topMeasurements.removeValue(forKey: currentTopPart)
-
-        switchMode(to: .initialized, measuring: currentTopPart)        
+        
+        manager.removeCurrentMeasurement()
+        switchMode(to: .initialized, measuring: manager.currentPart)        
     }
     
     @objc func moved(recognizer: UILongPressGestureRecognizer) {
@@ -244,11 +236,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 sceneView.scene.rootNode.addChildNode(newLine)
             }
             
-            topMeasurements[currentTopPart] = currentMeasurement
+            manager.addMeasurementAnchor(currentMeasurement)
             
-            switchMode(to: .finished, measuring: currentTopPart)
+            switchMode(to: .finished, measuring: manager.currentPart)
         } else if let _ = currentMeasurement.firstAnchor {
-            switchMode(to: .started, measuring: currentTopPart)
+            switchMode(to: .started, measuring: manager.currentPart)
         }
         
     

@@ -40,7 +40,7 @@ class SelectVC: UIViewController {
         let arVC = segue.destination as? ViewController
         
         if let category = self.category {
-            arVC?.currentCategory = category
+            arVC?.manager = ModeManager(category: category)
         }
     }
 
