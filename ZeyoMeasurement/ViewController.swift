@@ -152,7 +152,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         switchMode(to: .initialized, measuring: manager.currentPart)        
     }
     
-    @objc func moved(recognizer: UILongPressGestureRecognizer) {
+    @objc func longPressed(recognizer: UILongPressGestureRecognizer) {
         guard let recognizerView = recognizer.view as? ARSCNView else { return }
         let touch = recognizer.location(in: recognizerView)
         

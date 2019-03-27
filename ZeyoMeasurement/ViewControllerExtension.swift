@@ -168,7 +168,7 @@ extension ViewController {
     }
     
     func setupGestureRecognizers() {
-        let moveRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(moved))
+        let moveRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
         self.sceneView.addGestureRecognizer(moveRecognizer)
     }
 }
