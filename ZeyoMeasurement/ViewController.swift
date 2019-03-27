@@ -257,6 +257,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     func createBallNode() -> SCNNode{
         let ballShape = SCNSphere(radius: 0.01)
         let ballNode = SCNNode(geometry: ballShape)
+        ballNode.geometry?.firstMaterial?.diffuse.contents = manager.currentPart.color
 
         ballNode.categoryBitMask = BodyType.ObjectModel.rawValue
         
