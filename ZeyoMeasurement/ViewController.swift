@@ -41,8 +41,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var currentMeasurementAnchor: MeasurementAnchor? = MeasurementAnchor()
     var selectedNode: SCNNode?
-
-    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
     
     enum BodyType : Int {
         case ObjectModel = 2;
@@ -74,7 +72,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        setupGestureRecognizers()
+        setupGestureRecognizer()
         switchUnit(to: .centimeter)
         updateUI()
     }
@@ -154,6 +152,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @objc func longPressed(recognizer: UILongPressGestureRecognizer) {
+        guard manager.currentPart != .done else {
+            print("Cannot move node since user has finished measuring.")
+            return
+        }
         guard let recognizerView = recognizer.view as? ARSCNView else { return }
         let touch = recognizer.location(in: recognizerView)
         
