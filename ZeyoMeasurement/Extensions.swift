@@ -30,7 +30,7 @@ extension SCNVector3: Equatable {
 extension SCNNode {
     func setSelected() {
         self.geometry?.firstMaterial?.transparency = 0.5
-        self.scale(byX: 2.0, y: 2.0, z: 3.0)
+        self.scale(byX: 2.0, y: 2.0, z: 2.0)
         
         let centerShape = SCNSphere(radius: 0.001)
         let centerNode = SCNNode(geometry: centerShape)
@@ -40,9 +40,9 @@ extension SCNNode {
     
     func scale(byX x: Float, y: Float, z: Float) {
         let originalScale = self.scale
-        let scaleVector = SCNVector3Make(originalScale.x * 2,
-                                         originalScale.y * 2,
-                                         originalScale.z * 2)
+        let scaleVector = SCNVector3Make(originalScale.x * x,
+                                         originalScale.y * y,
+                                         originalScale.z * z)
         self.scale = scaleVector
     }
 }

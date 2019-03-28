@@ -199,11 +199,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             guard let hitNode = self.selectedNode else { return }
             guard let oldAnchor = sceneView.anchor(for: hitNode) else { return }
             
-            let originalScale = hitNode.scale
-            let scaleVector = SCNVector3Make(originalScale.x * 0.5,
-                                             originalScale.y * 0.5,
-                                             originalScale.z * 0.5)
-            hitNode.scale = scaleVector
+            hitNode.scale(byX: 0.5, y: 0.5, z: 0.5)
             
             let newAnchor = ARAnchor(name: oldAnchor.name!, transform: hitNode.simdTransform )
             sceneView.session.remove(anchor: oldAnchor)

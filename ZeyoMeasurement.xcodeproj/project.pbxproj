@@ -22,6 +22,7 @@
 		084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCD22248A56D00D86C50 /* SelectVC.swift */; };
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
+		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		084FBCD22248A56D00D86C50 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
+		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */,
 				084FBCB122446B6C00D86C50 /* LineNode.swift */,
 				084FBCA922446B5C00D86C50 /* Extensions.swift */,
+				08DB9C95224C6D1100F9A9FB /* LabelNode.swift */,
 			);
 			name = SceneKit;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */,
 				084FBCB922446B6C00D86C50 /* Plane.swift in Sources */,
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
+				08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */,
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
