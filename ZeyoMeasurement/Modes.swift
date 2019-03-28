@@ -80,6 +80,33 @@ enum Part: Int {
             return UIColor.black
         }
     }
+    
+    var categoryBitMask: Int {
+        switch self {
+        case .neck:
+            return 2
+        case .shoulder:
+            return 4
+        case .armhole:
+            return 8
+        case .sleeveLength:
+            return 16
+        case .sleeveWidth:
+            return 32
+        case .waist:
+            return 64
+        case .hip:
+            return 128
+        case .허벅지둘레:
+            return 256
+        case .밑단:
+            return 512
+        case .length:
+            return 1024
+        case .done:
+            return 2048
+        }
+    }
 }
 
 enum MeasuringState {

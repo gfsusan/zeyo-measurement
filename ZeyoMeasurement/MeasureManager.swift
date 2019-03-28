@@ -74,4 +74,8 @@ class MeasureManager {
     func addMeasurementAnchor(_ anchor: MeasurementAnchor) {
         measurements[currentPart] = anchor
     }
+    
+    func bitMask() -> Int {
+        return currentPart.categoryBitMask
+    }
 }

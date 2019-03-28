@@ -165,7 +165,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         // Keep pressing
         if recognizer.state == .began {
         
-            let hitTestResult = self.sceneView.hitTest(touch, options: [SCNHitTestOption.categoryBitMask: BodyType.ObjectModel.rawValue])
+            let hitTestResult = self.sceneView.hitTest(touch, options: [SCNHitTestOption.categoryBitMask: manager.bitMask()])
 
             guard let hitNode = hitTestResult.first?.node else { return }
             
@@ -262,7 +262,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let ballNode = SCNNode(geometry: ballShape)
         ballNode.geometry?.firstMaterial?.diffuse.contents = manager.currentPart.color
 
-        ballNode.categoryBitMask = BodyType.ObjectModel.rawValue
+        ballNode.categoryBitMask = manager.bitMask()
         
         return ballNode
     }
