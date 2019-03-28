@@ -152,10 +152,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @objc func longPressed(recognizer: UILongPressGestureRecognizer) {
-        guard manager.currentPart != .done else {
-            print("Cannot move node since user has finished measuring.")
-            return
-        }
         guard let recognizerView = recognizer.view as? ARSCNView else { return }
         let touch = recognizer.location(in: recognizerView)
         
@@ -165,6 +161,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         // Keep pressing
         if recognizer.state == .began {
         
+            guard manager.currentPart != .done else {
+                print("Cannot move node since user has finished measuring.")
+                return
+            }
+            
             let hitTestResult = self.sceneView.hitTest(touch, options: [SCNHitTestOption.categoryBitMask: manager.bitMask()])
 
             guard let hitNode = hitTestResult.first?.node else { return }
