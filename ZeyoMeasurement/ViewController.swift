@@ -125,6 +125,23 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @objc func takePhoto() {
         // take photo
         print("take photo")
+        sceneView.snapshot()
+        
+        // flash effect
+        if let wnd = self.view{
+            
+            let v = UIView(frame: wnd.bounds)
+            v.backgroundColor = UIColor.white
+            v.alpha = 1
+            
+            wnd.addSubview(v)
+            UIView.animate(withDuration: 1, animations: {
+                v.alpha = 0.0
+            }, completion: {(finished:Bool) in
+                print("inside")
+                v.removeFromSuperview()
+            })
+        }
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
