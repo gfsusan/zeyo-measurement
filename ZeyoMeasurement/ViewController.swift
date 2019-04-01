@@ -42,10 +42,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     var currentMeasurementAnchor: MeasurementAnchor? = MeasurementAnchor()
     var selectedNode: SCNNode?
     
-    enum BodyType : Int {
-        case ObjectModel = 2;
-    }
-    
     // MARK: - View Life Cycle
     
     /// - Tag: StartARSession
