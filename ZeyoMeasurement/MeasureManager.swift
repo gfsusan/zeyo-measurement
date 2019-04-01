@@ -24,7 +24,7 @@ class MeasureManager {
         case .top:
             bodyParts = [.neck, .shoulder, .armhole, .sleeveLength, .sleeveWidth, .length, .done]
         case .bottom:
-            bodyParts = [.waist, .hip, .허벅지둘레, .밑단, .length, .done]
+            bodyParts = [.waist, .hip, .thigh, .hem, .length, .done]
         }
         
         self.currentPart = bodyParts.first!

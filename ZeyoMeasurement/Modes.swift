@@ -22,8 +22,8 @@ enum Part: Int {
     case sleeveWidth
     case waist
     case hip
-    case 허벅지둘레
-    case 밑단
+    case thigh
+    case hem
     case length
     case done
     
@@ -45,9 +45,9 @@ enum Part: Int {
             return "허리 단면"
         case .hip:
             return "엉덩이 단면"
-        case .허벅지둘레:
+        case .thigh:
             return "허벅지 단면"
-        case .밑단:
+        case .hem:
             return "밑단"
         case .done:
             return "측정이 완료되었습니다."
@@ -70,9 +70,9 @@ enum Part: Int {
             return UIColor.purple
         case .hip:
             return UIColor.brown
-        case .허벅지둘레:
+        case .thigh:
             return UIColor.magenta
-        case .밑단:
+        case .hem:
             return UIColor.cyan
         case .length:
             return UIColor.planeColor
@@ -97,9 +97,9 @@ enum Part: Int {
             return 64
         case .hip:
             return 128
-        case .허벅지둘레:
+        case .thigh:
             return 256
-        case .밑단:
+        case .hem:
             return 512
         case .length:
             return 1024
