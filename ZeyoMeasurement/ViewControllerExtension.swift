@@ -93,12 +93,21 @@ extension ViewController {
             }
         }
         
+        // call sequence must be maintained
+        aimView.isHidden = !createPointButton.isEnabled
+        
         if manager.currentPart == .done {
-            createPointButton.isEnabled = false
             nextButton.isEnabled = false
+            createPointButton.isEnabled = true
+            createPointButton.setTitle("촬영", for: .normal)
+            createPointButton.removeTarget(self, action: #selector(createPoint), for: .touchUpInside)
+            createPointButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+        } else {
+            createPointButton.setTitle("점 찍기", for: .normal)
+            createPointButton.removeTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+            createPointButton.addTarget(self, action: #selector(createPoint), for: .touchUpInside)
         }
         
-        aimView.isHidden = !createPointButton.isEnabled
     }
     
     /**

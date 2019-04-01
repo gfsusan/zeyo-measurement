@@ -14,6 +14,10 @@ enum Category: Int {
     case bottom
 }
 
+enum categoryBitMask: Int {
+    case cateogoryToSelect = 2
+}
+
 enum Part: Int {
     case neck
     case shoulder

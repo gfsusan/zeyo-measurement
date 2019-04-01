@@ -89,7 +89,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             }) { (value) in
             }
         }
-        
+    }
+    
+    @objc func createPoint() {
         guard let currentMeasurement = self.currentMeasurementAnchor else { return }
         
         let touch = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
@@ -118,9 +120,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             }
         }
         
-        // switch mode in renderer
-        
-
+    }
+    
+    @objc func takePhoto() {
+        // take photo
+        print("take photo")
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
