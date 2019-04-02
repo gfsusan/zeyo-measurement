@@ -37,7 +37,7 @@ class ResultVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 170.0
+            return 300.0
         } else {
             return 44.0
         }
