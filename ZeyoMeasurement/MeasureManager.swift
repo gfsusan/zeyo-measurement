@@ -25,9 +25,9 @@ class MeasureManager {
         
         switch category {
         case .top:
-            bodyParts = [.neck, .shoulder, .armhole, .sleeveLength, .sleeveWidth, .length, .done]
+            bodyParts = [.neck, .shoulder, .armhole, .sleeveLength, .sleeveWidth, .length]
         case .bottom:
-            bodyParts = [.waist, .hip, .thigh, .hem, .length, .done]
+            bodyParts = [.waist, .hip, .thigh, .hem, .length]
         }
         
         self.currentPart = bodyParts.first!
@@ -36,7 +36,7 @@ class MeasureManager {
     }
     
     func switchMode(to mode: MeasuringState, measuring part: Part) {
-        guard bodyParts.contains(part) else {
+        guard bodyParts.contains(part) || part == .done else {
             fatalError("Attempted to switch to an invalid part.")
         }
         
@@ -49,8 +49,10 @@ class MeasureManager {
     
     func nextPart() -> Part? {
         // 현재 Part가 마지막이면 nil 반환
-        if currentPart == bodyParts.last! {
+        if currentPart == .done {
             return nil
+        } else if currentPart == bodyParts.last! {
+            return .done
         } else {    // 다음 Part가 있으면 해당 Part 반환
             let index = bodyParts.index(of: currentPart)! + 1
             return bodyParts[index]
@@ -60,6 +62,8 @@ class MeasureManager {
     func previousPart() -> Part? {
         if currentPart == bodyParts.first! {
             return nil
+        } else if currentPart == .done {
+            return bodyParts.last!
         } else {
             let index = bodyParts.index(of: currentPart)! - 1
             return bodyParts[index]
