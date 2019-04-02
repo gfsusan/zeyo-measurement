@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MeasureManager {
     let category: Category
@@ -16,6 +17,8 @@ class MeasureManager {
     
     var state: MeasuringState
     var measurements: [Part : MeasurementAnchor] = [:]
+    
+    var thumbImage: UIImage?
     
     init(category: Category) {
         self.category = category

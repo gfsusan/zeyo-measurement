@@ -127,14 +127,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @objc func finishMeasurement() {
-        takePhoto()
+        manager.thumbImage = takePhoto()
         self.performSegue(withIdentifier: "measurementResultSegue", sender: self)
     }
     
-    func takePhoto() {
+    func takePhoto() -> UIImage {
         // take photo
-        sceneView.snapshot()
-        
+        let snapshot = sceneView.snapshot()
+
         // flash effect
         if let wnd = self.view{
             
@@ -149,6 +149,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 v.removeFromSuperview()
             })
         }
+        
+        return snapshot
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
