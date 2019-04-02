@@ -20,6 +20,12 @@ class MeasureManager {
     
     var thumbImage: UIImage?
     
+    var measurementList: [(String, Float)] {
+        get {
+            return measurements.map { ($0.key.label, $0.value.lengthIn(unit: .centimeter) ?? 0.0) }
+        }
+    }
+    
     init(category: Category) {
         self.category = category
         
