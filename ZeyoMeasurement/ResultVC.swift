@@ -17,6 +17,12 @@ class ResultVC: UITableViewController {
         super.viewDidLoad()
         
         measurementList = manager.measurementList
+        
+        tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.height
+    }
+    
+    @IBAction func uploadPressed(_ sender: Any) {
+        print("upload button pressed")
     }
     
     // MARK: - Table view data source
@@ -26,7 +32,7 @@ class ResultVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return measurementList.count + 2
+        return measurementList.count + 1
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,12 +50,6 @@ class ResultVC: UITableViewController {
             cell?.thumbImage.image = manager.thumbImage
             
             return cell!
-        } else if indexPath.row == measurementList.count + 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
-            
-            cell.textLabel?.text = "This is the last cell."
-            
-            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
             
