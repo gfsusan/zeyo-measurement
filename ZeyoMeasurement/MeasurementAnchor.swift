@@ -20,7 +20,9 @@ class MeasurementAnchor {
     var length: Float {
         get {
             let unit = ApplicationSettings.Status.defaultUnit
-            return _length * unit.factor
+            let places: Float = 1.0
+            let divisor = powf(10.0, places)
+            return ((_length * unit.factor) * divisor).rounded() / divisor
         }
     }
     
