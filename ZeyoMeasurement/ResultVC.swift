@@ -44,6 +44,12 @@ class ResultVC: UITableViewController {
             cell?.thumbImage.image = manager.thumbImage
             
             return cell!
+        } else if indexPath.row == measurementList.count + 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
+            
+            cell.textLabel?.text = "This is the last cell."
+            
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
             
