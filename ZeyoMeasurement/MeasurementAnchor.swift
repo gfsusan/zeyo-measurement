@@ -15,17 +15,15 @@ class MeasurementAnchor {
     var secondAnchor: ARAnchor?
     
     var lineNode: LineNode?
-    private var _length: Float?
+    private var _length: Float = 0
+    
     var length: Float {
         get {
             let unit = ApplicationSettings.Status.defaultUnit
-            return _length ?? 0 * unit.factor
-        }
-        
-        set (value) {
-            _length = value
+            return _length * unit.factor
         }
     }
+    
     var lengthLabel: String {
         get {
             let unit = ApplicationSettings.Status.defaultUnit
@@ -50,7 +48,7 @@ class MeasurementAnchor {
         
         self.lineNode = LineNode(startVector: position1, endVector: position2)
         self._length = position1.distance(from: position2)
-        
+
         return self.lineNode!
     }
     
@@ -59,9 +57,8 @@ class MeasurementAnchor {
         return self.lineNode!
     }
     
-    func lengthIn(unit: Unit) -> Float? {
-        guard let l = _length else { return nil }
+    func lengthIn(unit: Unit) -> Float {
         let unit = ApplicationSettings.Status.defaultUnit
-        return l * unit.factor
+        return _length * unit.factor
     }
 }

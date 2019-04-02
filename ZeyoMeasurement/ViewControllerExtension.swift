@@ -143,9 +143,7 @@ extension ViewController {
             var labelText = "측정 결과"
             for (part, measurement) in manager.measurements {
                 labelText += "\n\(part.label): "
-                if let length = measurement.lengthIn(unit: currentUnit) {
-                    labelText += "\(length)\(currentUnit.label)"
-                }
+                labelText += measurement.lengthLabel
             }
             
             instructionLabel.text = labelText
@@ -157,10 +155,8 @@ extension ViewController {
                 instructionLabel.text = "\(manager.currentPart.label) 길이의 끝점을 찍어주세요."
             case .finished:
                 if let currentMeasurement = currentMeasurementAnchor {
-                    if let length = currentMeasurement.lengthIn(unit: currentUnit) {
-                            instructionLabel.text = "\(length)\(currentUnit.label)\n"
+                            instructionLabel.text = "\(currentMeasurement.lengthLabel)\n"
                                         + "양 끝의 동그라미를 꾹 누르면 수정할 수 있습니다"
-                    }
                 }
             }
         }
