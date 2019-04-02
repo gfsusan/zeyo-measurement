@@ -63,6 +63,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Show debug UI to view performance metrics (e.g. frames per second).
 //        sceneView.showsStatistics = true
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidLoad() {
@@ -78,6 +80,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Pause the view's AR session.
         sceneView.session.pause()
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func createPointButtonPressed(_ sender: UIButton) {
@@ -122,9 +126,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
     }
     
-    @objc func takePhoto() {
+    @objc func finishMeasurement() {
+        takePhoto()
+        self.performSegue(withIdentifier: "measurementResultSegue", sender: self)
+    }
+    
+    func takePhoto() {
         // take photo
-        print("take photo")
         sceneView.snapshot()
         
         // flash effect
@@ -138,7 +146,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             UIView.animate(withDuration: 1, animations: {
                 v.alpha = 0.0
             }, completion: {(finished:Bool) in
-                print("inside")
                 v.removeFromSuperview()
             })
         }
@@ -418,5 +425,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? ResultVC
+        
+        
     }
 }

@@ -37,7 +37,9 @@ class SelectVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let arVC = segue.destination as? ViewController
+        
+        let nav = segue.destination as? UINavigationController
+        let arVC = nav?.topViewController as? ViewController
         
         if let category = self.category {
             arVC?.manager = MeasureManager(category: category)

@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="eIu-np-qLy" kind="presentation" identifier="modalARSegue" id="5Sk-PK-JmW"/>
+                        <segue destination="2rg-gO-45v" kind="presentation" identifier="modalARSegue" id="5Sk-PK-JmW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deo-fY-Flb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,6 +224,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVH-fr-L4V"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7Pt-Jj-TBy"/>
                     <connections>
                         <outlet property="aimView" destination="it1-nx-ufO" id="YLA-ob-KhF"/>
                         <outlet property="createPointButton" destination="eTa-P7-fIN" id="KZg-kF-Hgz"/>
@@ -233,10 +234,47 @@
                         <outlet property="previousButton" destination="73Y-CK-65k" id="YC8-rG-0eE"/>
                         <outlet property="resetButton" destination="GRk-Hk-7wG" id="LDO-3K-elT"/>
                         <outlet property="sceneView" destination="qx1-oK-MGp" id="hfg-XM-OYD"/>
+                        <segue destination="yCu-N1-O7t" kind="show" identifier="measurementResultSegue" id="YmO-JY-Ugd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-fh-IQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Xd1-Rd-srm" customClass="SCNScene"/>
+            </objects>
+            <point key="canvasLocation" x="1968.8" y="-222.63868065967017"/>
+        </scene>
+        <!--ResultVC-->
+        <scene sceneID="zx1-I2-cYV">
+            <objects>
+                <viewController id="yCu-N1-O7t" customClass="ResultVC" customModule="ZeyoMeasurement" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sb3-Lc-9Mg"/>
+                        <viewControllerLayoutGuide type="bottom" id="f22-ro-QXb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LMt-0U-FvW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K9P-7C-T4C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeK-JA-Fsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712.8000000000002" y="-224.4377811094453"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U1M-gh-rOk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2rg-gO-45v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PhL-MS-uFs">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eIu-np-qLy" kind="relationship" relationship="rootViewController" id="Z1c-rN-b4f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjT-MG-R6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1029.5999999999999" y="-222.63868065967017"/>
         </scene>

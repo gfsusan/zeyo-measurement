@@ -101,10 +101,10 @@ extension ViewController {
             createPointButton.isEnabled = true
             createPointButton.setTitle("촬영", for: .normal)
             createPointButton.removeTarget(self, action: #selector(createPoint), for: .touchUpInside)
-            createPointButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+            createPointButton.addTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
         } else {
             createPointButton.setTitle("점 찍기", for: .normal)
-            createPointButton.removeTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+            createPointButton.removeTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
             createPointButton.addTarget(self, action: #selector(createPoint), for: .touchUpInside)
         }
         
