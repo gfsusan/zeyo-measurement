@@ -15,13 +15,29 @@ class MeasurementAnchor {
     var secondAnchor: ARAnchor?
     
     var lineNode: LineNode?
-    private var length: Float?
+    private var _length: Float?
+    var length: Float {
+        get {
+            let unit = ApplicationSettings.Status.defaultUnit
+            return _length ?? 0 * unit.factor
+        }
+        
+        set (value) {
+            _length = value
+        }
+    }
+    var lengthLabel: String {
+        get {
+            let unit = ApplicationSettings.Status.defaultUnit
+            return "\(length) \(unit.label)"
+        }
+    }
     
     var text: SCNText?
     var textNode: SCNNode?
     
     init() {
-        
+
     }
     
     /**
@@ -33,7 +49,7 @@ class MeasurementAnchor {
         let position2 = anchor2.position()
         
         self.lineNode = LineNode(startVector: position1, endVector: position2)
-        self.length = position1.distance(from: position2)
+        self._length = position1.distance(from: position2)
         
         return self.lineNode!
     }
@@ -44,12 +60,8 @@ class MeasurementAnchor {
     }
     
     func lengthIn(unit: Unit) -> Float? {
-        guard let l = length else { return nil }
+        guard let l = _length else { return nil }
+        let unit = ApplicationSettings.Status.defaultUnit
         return l * unit.factor
-    }
-    
-    func setLength(_ length: Float) {
-        self.length = length
-        
     }
 }

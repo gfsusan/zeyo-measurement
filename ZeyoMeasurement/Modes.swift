@@ -122,7 +122,7 @@ enum MeasuringState {
     case finished
 }
 
-enum Unit {
+enum Unit: String {
     case meter
     case centimeter
     case inch

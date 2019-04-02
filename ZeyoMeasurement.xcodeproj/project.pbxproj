@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08174F542252E9D400117F44 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F532252E9D400117F44 /* ResultVC.swift */; };
 		08174F592252F3C500117F44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F582252F3C500117F44 /* ImageCell.swift */; };
+		08174F6022534BAF00117F44 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F5F22534BAF00117F44 /* ApplicationSettings.swift */; };
 		084FBCAB22446B5C00D86C50 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCA622446B5C00D86C50 /* Assets.scnassets */; };
 		084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCA922446B5C00D86C50 /* Extensions.swift */; };
 		084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		08174F532252E9D400117F44 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		08174F582252F3C500117F44 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		08174F5F22534BAF00117F44 /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		084FBC8E22446B3900D86C50 /* ZeyoMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeyoMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		084FBC9F22446B3A00D86C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		084FBCA622446B5C00D86C50 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
@@ -89,8 +91,8 @@
 		084FBC9022446B3900D86C50 /* ZeyoMeasurement */ = {
 			isa = PBXGroup;
 			children = (
-				08DB9C8E224A274200F9A9FB /* Assets.xcassets */,
 				084FBCCE2244710E00D86C50 /* AppDelegate.swift */,
+				08174F5F22534BAF00117F44 /* ApplicationSettings.swift */,
 				084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */,
 				084FBCBF22446C7600D86C50 /* Main.storyboard */,
 				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
@@ -101,6 +103,7 @@
 				084FBCC622446CB600D86C50 /* SceneKit */,
 				084FBCB022446B6C00D86C50 /* Modes.swift */,
 				08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */,
+				08DB9C8E224A274200F9A9FB /* Assets.xcassets */,
 				084FBCA622446B5C00D86C50 /* Assets.scnassets */,
 				084FBC9F22446B3A00D86C50 /* Info.plist */,
 			);
@@ -213,6 +216,7 @@
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 				08174F542252E9D400117F44 /* ResultVC.swift in Sources */,
+				08174F6022534BAF00117F44 /* ApplicationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
