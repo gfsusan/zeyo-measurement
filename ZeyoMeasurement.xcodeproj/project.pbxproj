@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		08174F542252E9D400117F44 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F532252E9D400117F44 /* ResultVC.swift */; };
 		08174F592252F3C500117F44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F582252F3C500117F44 /* ImageCell.swift */; };
-		08174F5B2252F3CF00117F44 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F5A2252F3CF00117F44 /* ContentCell.swift */; };
 		084FBCAB22446B5C00D86C50 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FBCA622446B5C00D86C50 /* Assets.scnassets */; };
 		084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCA922446B5C00D86C50 /* Extensions.swift */; };
 		084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCAF22446B6C00D86C50 /* MeasurementAnchor.swift */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		08174F532252E9D400117F44 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		08174F582252F3C500117F44 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		08174F5A2252F3CF00117F44 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		084FBC8E22446B3900D86C50 /* ZeyoMeasurement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeyoMeasurement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		084FBC9F22446B3A00D86C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		084FBCA622446B5C00D86C50 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				08174F532252E9D400117F44 /* ResultVC.swift */,
 				08174F582252F3C500117F44 /* ImageCell.swift */,
-				08174F5A2252F3CF00117F44 /* ContentCell.swift */,
 			);
 			name = Result;
 			sourceTree = "<group>";
@@ -214,7 +211,6 @@
 				08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */,
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
-				08174F5B2252F3CF00117F44 /* ContentCell.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 				08174F542252E9D400117F44 /* ResultVC.swift in Sources */,
 			);

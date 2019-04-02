@@ -431,7 +431,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? ResultVC
-        
-        
+        vc?.manager = manager
     }
 }

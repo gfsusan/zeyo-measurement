@@ -10,37 +10,51 @@ import UIKit
 
 class ResultVC: UITableViewController {
     
+    var manager: MeasureManager!
+    var measurementList: [(String, Float)] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        measurementList = manager.measurementList
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return measurementList.count + 2
     }
     
-    /*
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 170.0
+        } else {
+            return 44.0
+        }
+    }
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as? ImageCell
+            
+            cell?.thumbImage.image = manager.thumbImage
+            
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
+            
+            let measurement = measurementList[indexPath.row - 1]
+            cell.textLabel?.text = measurement.0
+            cell.detailTextLabel?.text = "\(measurement.1) cm"
+            
+            return cell
+        }
      }
-     */
+    
     
     /*
      // Override to support conditional editing of the table view.
