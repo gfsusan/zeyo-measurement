@@ -128,7 +128,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     @objc func finishMeasurement() {
         manager.thumbImage = takePhoto()
-        self.performSegue(withIdentifier: "measurementResultSegue", sender: self)
     }
     
     func takePhoto() -> UIImage {
@@ -147,6 +146,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
                 v.alpha = 0.0
             }, completion: {(finished:Bool) in
                 v.removeFromSuperview()
+                self.performSegue(withIdentifier: "measurementResultSegue", sender: self)
+
             })
         }
         
