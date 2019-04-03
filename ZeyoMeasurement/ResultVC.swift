@@ -16,9 +16,9 @@ class ResultVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        measurementList = manager.measurementList
-        
+        tableView.register(ContentCell.self, forCellReuseIdentifier: "contentCell")
         tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.height
+        measurementList = manager.measurementList
     }
     
     @IBAction func uploadPressed(_ sender: Any) {

@@ -68,9 +68,9 @@
 		08174F572252F3AC00117F44 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				0893F16A22548468002B77BC /* ContentCell.swift */,
 				08174F532252E9D400117F44 /* ResultVC.swift */,
 				08174F582252F3C500117F44 /* ImageCell.swift */,
+				0893F16A22548468002B77BC /* ContentCell.swift */,
 			);
 			name = Result;
 			sourceTree = "<group>";
