@@ -30,6 +30,7 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.text = "\(45.2)"
+        textField.returnKeyType = UIReturnKeyType.done
         return textField
     }()
 
