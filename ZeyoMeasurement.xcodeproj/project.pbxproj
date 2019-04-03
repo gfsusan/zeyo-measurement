@@ -23,6 +23,7 @@
 		084FBCCB2244708000D86C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCA2244708000D86C50 /* ViewController.swift */; };
 		084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCE2244710E00D86C50 /* AppDelegate.swift */; };
 		084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCD22248A56D00D86C50 /* SelectVC.swift */; };
+		0893F16B22548469002B77BC /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893F16A22548468002B77BC /* ContentCell.swift */; };
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
@@ -47,6 +48,7 @@
 		084FBCCA2244708000D86C50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		084FBCCE2244710E00D86C50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		084FBCD22248A56D00D86C50 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
+		0893F16A22548468002B77BC /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		08174F572252F3AC00117F44 /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				0893F16A22548468002B77BC /* ContentCell.swift */,
 				08174F532252E9D400117F44 /* ResultVC.swift */,
 				08174F582252F3C500117F44 /* ImageCell.swift */,
 			);
@@ -209,6 +212,7 @@
 				084FBCBA22446B6C00D86C50 /* ViewControllerExtension.swift in Sources */,
 				08174F592252F3C500117F44 /* ImageCell.swift in Sources */,
 				084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */,
+				0893F16B22548469002B77BC /* ContentCell.swift in Sources */,
 				084FBCB922446B6C00D86C50 /* Plane.swift in Sources */,
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
 				08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */,
