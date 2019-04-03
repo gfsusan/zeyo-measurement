@@ -88,7 +88,9 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
         stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
-
+        
+        partLabel.widthAnchor.constraint(equalTo: contentView.layoutMarginsGuide.widthAnchor, multiplier: 0.4).isActive = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
