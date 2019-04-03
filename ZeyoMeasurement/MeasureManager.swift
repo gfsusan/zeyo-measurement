@@ -20,9 +20,9 @@ class MeasureManager {
     
     var thumbImage: UIImage?
     
-    var measurementList: [(Part, MeasurementAnchor)] {
+    var measurementList: [(Part, Float)] {
         get {
-            return measurements.map { ($0.key, $0.value) }
+            return measurements.map { ($0.key, $0.value.length) }
         }
     }
     

@@ -49,14 +49,24 @@ class MeasurementAnchor {
         let position2 = anchor2.position()
         
         self.lineNode = LineNode(startVector: position1, endVector: position2)
-        self._length = position1.distance(from: position2)
 
+        updateLength(length: position1.distance(from: position2))
+        
         return self.lineNode!
     }
     
     func updateLine(fromUpdatingNode: SCNNode) -> LineNode {
      
         return self.lineNode!
+    }
+    
+    func updateLength(length: Float) {
+        self._length = length
+    }
+    
+    func updateLengthInCurrentUnit(length: Float) {
+        let unit = ApplicationSettings.Status.defaultUnit
+        self._length = length / unit.factor
     }
     
     func lengthIn(unit: Unit) -> Float {

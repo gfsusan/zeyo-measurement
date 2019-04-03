@@ -11,7 +11,7 @@ import UIKit
 class ResultVC: UITableViewController {
     
     var manager: MeasureManager!
-    var measurementList: [(part: Part, measurement: MeasurementAnchor)] = []
+    var measurementList: [(part: Part, length: Float)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

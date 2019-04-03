@@ -10,10 +10,10 @@ import UIKit
 
 class ContentCell: UITableViewCell, UITextFieldDelegate {
     
-    var measurementItem: (Part, MeasurementAnchor)! {
+    var measurementItem: (Part, Float)! {
         didSet {
             partLabel.text = measurementItem.0.label
-            lengthTextField.text = "\(measurementItem.1.length)"
+            lengthTextField.text = "\(measurementItem.1)"
             unitLabel.text = ApplicationSettings.Status.defaultUnit.label
             unitLabel.sizeToFit()
         }
@@ -44,6 +44,8 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupContraints()
+        
+        lengthTextField.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,6 +56,19 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
         super.awakeFromNib()
         // Initialization code
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        lengthTextField.resignFirstResponder()
+        return false
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let length = Float(lengthTextField.text!) {
+            measurementItem.1 = length
+            lengthTextField.text = "\(length)"
+        }
+        return true
     }
     
     func setupContraints() {
