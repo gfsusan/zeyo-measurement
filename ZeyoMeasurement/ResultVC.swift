@@ -11,7 +11,7 @@ import UIKit
 class ResultVC: UITableViewController {
     
     var manager: MeasureManager!
-    var measurementList: [(String, String)] = []
+    var measurementList: [(String, Float)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class ResultVC: UITableViewController {
             
             let measurement = measurementList[indexPath.row - 1]
             cell.textLabel?.text = measurement.0
-            cell.detailTextLabel?.text = measurement.1
+            cell.detailTextLabel?.text = "\(measurement.1)"
             
             return cell
         }
