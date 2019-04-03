@@ -10,6 +10,15 @@ import UIKit
 
 class ContentCell: UITableViewCell, UITextFieldDelegate {
     
+    var measurementItem: (Part, MeasurementAnchor)! {
+        didSet {
+            partLabel.text = measurementItem.0.label
+            lengthTextField.text = "\(measurementItem.1.length)"
+            unitLabel.text = ApplicationSettings.Status.defaultUnit.label
+            unitLabel.sizeToFit()
+        }
+    }
+    
     let partLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,14 +39,6 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
         label.text = "UNIT"
         return label
     }()
-    
-    var measurementItem: (Part, MeasurementAnchor)! {
-        didSet {
-            partLabel.text = measurementItem.0.label
-            lengthTextField.text = "\(measurementItem.1.length)"
-            unitLabel.text = ApplicationSettings.Status.defaultUnit.label
-        }
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -62,11 +63,12 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
         contentView.addSubview(stackView)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.alignment = .fill
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 5
         
         stackView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        print (contentView.safeAreaInsets.left)
         stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
 
