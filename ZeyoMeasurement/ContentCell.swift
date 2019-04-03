@@ -67,8 +67,8 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let length = Float(lengthTextField.text!) {
             measurementItem.1 = length
-            lengthTextField.text = "\(length)"
         }
+        lengthTextField.text = "\(measurementItem.1)"
         return true
     }
     
