@@ -11,7 +11,7 @@ import UIKit
 class ResultVC: UITableViewController {
     
     var manager: MeasureManager!
-    var measurementList: [(part: Part, ma: MeasurementAnchor)] = []
+    var measurementList: [(part: Part, measurement: MeasurementAnchor)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +51,10 @@ class ResultVC: UITableViewController {
             
             return cell!
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! ContentCell
             
             let measurement = measurementList[indexPath.row - 1]
-            cell.textLabel?.text = measurement.part.label
-            cell.detailTextLabel?.text = "\(measurement.ma.length)"
+            cell.measurementItem = measurement
             
             return cell
         }
