@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814757A2255AF6F00C64E4A /* ZeyoClient.swift */; };
+		0814757E2255CFE100C64E4A /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814757D2255CFE100C64E4A /* Cloth.swift */; };
 		08174F542252E9D400117F44 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F532252E9D400117F44 /* ResultVC.swift */; };
 		08174F592252F3C500117F44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F582252F3C500117F44 /* ImageCell.swift */; };
 		08174F6022534BAF00117F44 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F5F22534BAF00117F44 /* ApplicationSettings.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0814757A2255AF6F00C64E4A /* ZeyoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeyoClient.swift; sourceTree = "<group>"; };
+		0814757D2255CFE100C64E4A /* Cloth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
 		08174F532252E9D400117F44 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		08174F582252F3C500117F44 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		08174F5F22534BAF00117F44 /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
@@ -65,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081475792255AF3C00C64E4A /* ZeyoClient */ = {
+			isa = PBXGroup;
+			children = (
+				0814757A2255AF6F00C64E4A /* ZeyoClient.swift */,
+			);
+			name = ZeyoClient;
+			sourceTree = "<group>";
+		};
+		0814757C2255CFAD00C64E4A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */,
+				084FBCB022446B6C00D86C50 /* Modes.swift */,
+				0814757D2255CFE100C64E4A /* Cloth.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		08174F572252F3AC00117F44 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +124,10 @@
 				084FBCCA2244708000D86C50 /* ViewController.swift */,
 				084FBCB322446B6C00D86C50 /* ViewControllerExtension.swift */,
 				08174F572252F3AC00117F44 /* Result */,
-				084FBCC322446C9900D86C50 /* Apple */,
 				084FBCC622446CB600D86C50 /* SceneKit */,
-				084FBCB022446B6C00D86C50 /* Modes.swift */,
-				08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */,
+				084FBCC322446C9900D86C50 /* Apple */,
+				0814757C2255CFAD00C64E4A /* Models */,
+				081475792255AF3C00C64E4A /* ZeyoClient */,
 				08DB9C8E224A274200F9A9FB /* Assets.xcassets */,
 				084FBCA622446B5C00D86C50 /* Assets.scnassets */,
 				084FBC9F22446B3A00D86C50 /* Info.plist */,
@@ -217,9 +239,11 @@
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
 				08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */,
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
+				0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */,
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 				08174F542252E9D400117F44 /* ResultVC.swift in Sources */,
+				0814757E2255CFE100C64E4A /* Cloth.swift in Sources */,
 				08174F6022534BAF00117F44 /* ApplicationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

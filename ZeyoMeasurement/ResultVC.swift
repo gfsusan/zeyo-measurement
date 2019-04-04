@@ -23,6 +23,9 @@ class ResultVC: UITableViewController {
     
     @IBAction func uploadPressed(_ sender: Any) {
         print("upload button pressed")
+        zeyoClient.getAllClothes {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Table view data source
