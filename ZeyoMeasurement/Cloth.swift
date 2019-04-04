@@ -42,6 +42,18 @@ class Cloth {
         for part in parts {
             measurements[part] = Float.random(in: 300.0 ... 600.0) / 10.0
         }
+        
+        var imageName: String
+        switch category {
+        case .top:
+            imageName = "t"
+        case .bottom:
+            imageName = "b"
+        }
+        
+        let imageNumber = Int.random(in: 1...4)
+        
+        self.thumbImage = UIImage(named: "\(imageName)\(imageNumber).jpeg")
     }
 
     static func generateCloth() -> Cloth {
