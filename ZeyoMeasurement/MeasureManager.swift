@@ -29,9 +29,7 @@ class MeasureManager {
     init(category: Category) {
         self.category = category
         self.bodyParts = category.parts
-        
         self.currentPart = bodyParts.first!
-        
         self.state = .initialized
     }
     
