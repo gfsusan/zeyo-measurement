@@ -22,8 +22,8 @@ class ResultVC: UITableViewController {
     }
     
     @IBAction func uploadPressed(_ sender: Any) {
-        print("upload button pressed")
-        zeyoClient.getAllClothes {
+        let cloth = Cloth(name: Date().description, manager: manager)
+        ZeyoClient.postCloth(cloth: cloth) {
             self.dismiss(animated: true, completion: nil)
         }
     }

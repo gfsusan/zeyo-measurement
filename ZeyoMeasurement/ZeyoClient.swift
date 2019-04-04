@@ -8,13 +8,13 @@
 
 import Foundation
 
-let zeyoClient = ZeyoClient()
+//let zeyoClient = ZeyoClient()
 
 class ZeyoClient {
     static let baseURL = "http://hulk.zeyo.co.kr:5002/api/documents"
     static var clothes: [Cloth] = []
     
-    func getAllClothes(completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+    static func generateRandomClothes(completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
         ZeyoClient.clothes = []
         let count = Int.random(in: 7 ... 23)
         for _ in 0...count {
@@ -23,17 +23,21 @@ class ZeyoClient {
          completionHandler(/*error*/)
     }
     
-    func postCloth(cloth: Cloth, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+    static func getAllClothes(completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+        completionHandler(/*error*/)
+    }
+    
+    static func postCloth(cloth: Cloth, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
         // TODO: remove this after sync with server
         ZeyoClient.clothes.append(cloth)
         completionHandler(/*error*/)
     }
     
-    func putCloth(id: String, cloth: Cloth, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+    static func putCloth(id: String, cloth: Cloth, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
         completionHandler(/*error*/)
     }
     
-    func deleteCloth(id: String, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+    static func deleteCloth(id: String, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
         completionHandler(/*error*/)
     }
 }

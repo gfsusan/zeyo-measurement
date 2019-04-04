@@ -9,8 +9,7 @@
 import UIKit
 
 class ClosetVC: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    private var clothes = ZeyoClient.clothes
-
+    
     @IBOutlet weak var closetCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -18,19 +17,27 @@ class ClosetVC: UITableViewController, UICollectionViewDelegate, UICollectionVie
 
         closetCollectionView.delegate = self
 
-        zeyoClient.getAllClothes {
-            self.clothes = ZeyoClient.clothes
+        ZeyoClient.generateRandomClothes() {
+            self.closetCollectionView.reloadData()
         }
-}
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ZeyoClient.getAllClothes {
+            DispatchQueue.main.async {
+                self.closetCollectionView.reloadData()
+            }
+        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return clothes.count
+        return ZeyoClient.clothes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothCell", for: indexPath) as! ClothCell
         
-        let cloth = clothes[indexPath.row]
+        let cloth = ZeyoClient.clothes[indexPath.row]
         cell.displayContent(cloth: cloth)
         
         return cell

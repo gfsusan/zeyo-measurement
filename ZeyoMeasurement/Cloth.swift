@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class Cloth {
+    static var ctr = 1
+    
     var name: String
     var category: Category
     var parts: [Part]
@@ -35,7 +37,8 @@ class Cloth {
     }
     
     init(random: Bool) {
-        self.name = Date().description
+        self.name = "옷\(Cloth.ctr)"
+        Cloth.ctr = Cloth.ctr + 1
         self.category = Category.random()
         self.parts = self.category.parts
         measurements = [:]
