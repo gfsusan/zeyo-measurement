@@ -28,13 +28,7 @@ class MeasureManager {
     
     init(category: Category) {
         self.category = category
-        
-        switch category {
-        case .top:
-            bodyParts = [.neck, .shoulder, .armhole, .sleeveLength, .sleeveWidth, .length]
-        case .bottom:
-            bodyParts = [.waist, .hip, .thigh, .hem, .length]
-        }
+        self.bodyParts = category.parts
         
         self.currentPart = bodyParts.first!
         

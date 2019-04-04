@@ -12,6 +12,15 @@ import UIKit
 enum Category: Int {
     case top
     case bottom
+    
+    var parts: [Part] {
+        switch self {
+        case .top:
+            return [.neck, .shoulder, .armhole, .sleeveLength, .sleeveWidth, .length]
+        case .bottom:
+            return [.waist, .hip, .thigh, .hem, .length]
+        }
+    }
 }
 
 enum categoryBitMask: Int {
