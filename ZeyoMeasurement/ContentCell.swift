@@ -15,7 +15,6 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
             partLabel.text = measurementItem.0.label
             lengthTextField.text = "\(measurementItem.1)"
             unitLabel.text = ApplicationSettings.Status.defaultUnit.label
-            unitLabel.sizeToFit()
         }
     }
     
