@@ -13,6 +13,8 @@ enum Category: Int {
     case top
     case bottom
     
+    static let count = 2
+    
     var parts: [Part] {
         switch self {
         case .top:
@@ -20,6 +22,11 @@ enum Category: Int {
         case .bottom:
             return [.waist, .hip, .thigh, .hem, .length]
         }
+    }
+    
+    static func random() -> Category {
+        let randomNumber = Int.random(in: 0 ..< Category.count)
+        return Category(rawValue: randomNumber)!
     }
 }
 

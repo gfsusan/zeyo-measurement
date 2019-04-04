@@ -33,4 +33,18 @@ class Cloth {
         self.measurements = measurements
         self.thumbImage = thumbImage
     }
+    
+    init(random: Bool) {
+        self.name = Date().description
+        self.category = Category.random()
+        self.parts = self.category.parts
+        measurements = [:]
+        for part in parts {
+            measurements[part] = Float.random(in: 300.0 ... 600.0) / 10.0
+        }
+    }
+
+    static func generateCloth() -> Cloth {
+        return Cloth(random: true)
+    }
 }
