@@ -16,7 +16,7 @@ class ZeyoClient {
     
     static func generateRandomClothes(completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
         ZeyoClient.clothes = []
-        let count = Int.random(in: 7 ... 1)
+        let count = Int.random(in: 7 ... 16)
         for _ in 0...count {
             ZeyoClient.clothes.append(Cloth(random: true))
         }

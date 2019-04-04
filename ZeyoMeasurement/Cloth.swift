@@ -54,7 +54,7 @@ class Cloth {
             imageName = "b"
         }
         
-        let imageNumber = Int.random(in: 1...16)
+        let imageNumber = Int.random(in: 1...8)
         
         self.thumbImage = UIImage(named: "\(imageName)\(imageNumber).jpeg")
     }
