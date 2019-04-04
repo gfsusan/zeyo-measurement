@@ -15,10 +15,17 @@ class ZeyoClient {
     static var clothes: [Cloth] = []
     
     func getAllClothes(completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+        ZeyoClient.clothes = []
+        let count = Int.random(in: 7 ... 23)
+        for _ in 0...count {
+            ZeyoClient.clothes.append(Cloth(random: true))
+        }
          completionHandler(/*error*/)
     }
     
     func postCloth(cloth: Cloth, completionHandler: @escaping (/*_ error: Error?*/) -> Void) {
+        // TODO: remove this after sync with server
+        ZeyoClient.clothes.append(cloth)
         completionHandler(/*error*/)
     }
     
