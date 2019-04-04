@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nNS-1K-wha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YaU-m8-GnI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,14 +56,20 @@
                             <constraint firstItem="DMY-oi-oeI" firstAttribute="centerX" secondItem="ocA-Uq-ZQ1" secondAttribute="centerX" id="aBy-qN-OV9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Yz-Ga-L7n"/>
+                    <navigationItem key="navigationItem" id="5Yz-Ga-L7n">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vir-b1-5Kc">
+                            <connections>
+                                <action selector="cancelPressed:" destination="Q49-NB-5Kf" id="iZZ-67-svw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="eIu-np-qLy" kind="show" identifier="modalARSegue" id="Njc-Sy-1lX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deo-fY-Flb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159.1999999999998" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="3098.4000000000001" y="-222.63868065967017"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gpu-NC-Kut">
@@ -241,7 +247,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-fh-IQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Xd1-Rd-srm" customClass="SCNScene"/>
             </objects>
-            <point key="canvasLocation" x="2908" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="3847.1999999999998" y="-222.63868065967017"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="eRM-pW-Sf2">
@@ -356,7 +362,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V50-UV-xxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="-224.4377811094453"/>
+            <point key="canvasLocation" x="4647.1999999999998" y="-224.4377811094453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a3V-gb-jvQ">
@@ -374,7 +380,128 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBJ-MZ-hT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-223.53823088455775"/>
+            <point key="canvasLocation" x="2159.1999999999998" y="-223.53823088455775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Orp-R7-lSk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YaU-m8-GnI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6dy-7n-c6R">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7YH-Rf-jnJ" kind="relationship" relationship="rootViewController" id="5I8-Ds-zyD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7n-Nz-tup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="-223.53823088455775"/>
+        </scene>
+        <!--ClosetVC-->
+        <scene sceneID="mGu-GE-zG6">
+            <objects>
+                <tableViewController id="7YH-Rf-jnJ" customClass="ClosetVC" customModule="ZeyoMeasurement" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fHi-6l-V65">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="VYU-YQ-d7i">
+                            <rect key="frame" x="0.0" y="202" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="My Clothes" id="eaE-0K-Nx8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="174" id="s1O-cF-b0I">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="174"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s1O-cF-b0I" id="gmG-oR-PcE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="173.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vgz-T1-T60">
+                                                    <rect key="frame" x="16" y="11" width="343" height="152"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eUp-4W-8s6">
+                                                        <size key="itemSize" width="115" height="148"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="clothCell" id="F3h-cE-8zM" customClass="ClothCell" customModule="ZeyoMeasurement" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="2" width="115" height="148"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="115" height="148"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aim" translatesAutoresizingMaskIntoConstraints="NO" id="uLA-QW-JKD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="104"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반팔 티셔츠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofD-qL-ppt">
+                                                                        <rect key="frame" x="16" y="104" width="83" height="44"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="ofD-qL-ppt" firstAttribute="top" secondItem="uLA-QW-JKD" secondAttribute="bottom" id="0M1-rB-YJp"/>
+                                                                <constraint firstItem="uLA-QW-JKD" firstAttribute="leading" secondItem="F3h-cE-8zM" secondAttribute="leading" id="AkU-4I-vZR"/>
+                                                                <constraint firstItem="ofD-qL-ppt" firstAttribute="leading" secondItem="F3h-cE-8zM" secondAttribute="leadingMargin" id="PZr-O5-01V"/>
+                                                                <constraint firstItem="uLA-QW-JKD" firstAttribute="top" secondItem="F3h-cE-8zM" secondAttribute="top" id="ThF-d7-E9E"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="ofD-qL-ppt" secondAttribute="bottom" id="bZS-Wq-TO7"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="ofD-qL-ppt" secondAttribute="trailing" id="esB-Jo-qKT"/>
+                                                                <constraint firstAttribute="trailing" secondItem="uLA-QW-JKD" secondAttribute="trailing" id="lDx-6Y-dwU"/>
+                                                                <constraint firstAttribute="bottom" secondItem="uLA-QW-JKD" secondAttribute="bottom" constant="44" id="vaQ-iP-Hbf"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="nameLabel" destination="ofD-qL-ppt" id="6vA-W5-1bM"/>
+                                                                <outlet property="thumbImageView" destination="uLA-QW-JKD" id="Bdb-wY-y5W"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="7YH-Rf-jnJ" id="wn9-tR-jJv"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Vgz-T1-T60" secondAttribute="bottom" id="3Pa-4r-6Wx"/>
+                                                <constraint firstItem="Vgz-T1-T60" firstAttribute="top" secondItem="gmG-oR-PcE" secondAttribute="topMargin" id="7GN-JX-GBB"/>
+                                                <constraint firstItem="Vgz-T1-T60" firstAttribute="leading" secondItem="gmG-oR-PcE" secondAttribute="leadingMargin" id="YTB-9c-RpA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vgz-T1-T60" secondAttribute="trailing" id="pDD-aU-rjb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7YH-Rf-jnJ" id="nFt-eL-8Cf"/>
+                            <outlet property="delegate" destination="7YH-Rf-jnJ" id="m6B-34-vRm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EIO-0o-sWM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4f-Ae-yLp">
+                            <connections>
+                                <segue destination="nNS-1K-wha" kind="presentation" id="bof-Bo-mjR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closetCollectionView" destination="Vgz-T1-T60" id="dxz-jR-Mzk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paV-xM-5yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264.8" y="-224.4377811094453"/>
         </scene>
     </scenes>
     <resources>

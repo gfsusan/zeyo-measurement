@@ -30,6 +30,9 @@ class SelectVC: UIViewController {
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
 
