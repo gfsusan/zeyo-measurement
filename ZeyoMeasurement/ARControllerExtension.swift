@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ViewController {
+extension ARMeasureVC {
     
     func switchUnit(to unit: Unit) {
         self.currentUnit = unit

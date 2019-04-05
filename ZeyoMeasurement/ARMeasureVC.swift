@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARController.swift
 //  ZeyoMeasurement
 //
 //  Created by Susan Kim on 22/03/2019.
@@ -16,7 +16,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var sceneView: ARSCNView!

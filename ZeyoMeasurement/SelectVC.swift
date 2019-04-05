@@ -41,7 +41,7 @@ class SelectVC: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        let arVC = segue.destination as? ViewController
+        let arVC = segue.destination as? ARMeasureVC
         
         if let category = self.category {
             arVC?.manager = MeasureManager(category: category)
