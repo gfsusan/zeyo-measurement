@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-enum Category: Int {
+enum Category: Int, CaseIterable {
     case top
     case bottom
-    
-    static let count = 2
     
     var parts: [Part] {
         switch self {
@@ -25,7 +23,7 @@ enum Category: Int {
     }
     
     static func random() -> Category {
-        let randomNumber = Int.random(in: 0 ..< Category.count)
+        let randomNumber = Int.random(in: 0 ..< Category.allCases.count)
         return Category(rawValue: randomNumber)!
     }
 }
