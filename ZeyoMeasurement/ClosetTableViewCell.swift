@@ -10,19 +10,43 @@ import UIKit
 
 class ClosetTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var category: Category = .top {
+        didSet {
+            clothes = ZeyoClient.clothes.filter({ (cloth) -> Bool in
+                return cloth.category == category
+            })
+        }
+    }
+    var clothes: [Cloth]! {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return clothes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothCell", for: indexPath) as! ClothCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothCell", for: indexPath) as? ClothCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let cloth = clothes[indexPath.row]
+        cell.displayContent(cloth: cloth)
+                
         return cell
     }
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

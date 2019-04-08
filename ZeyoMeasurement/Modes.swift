@@ -13,6 +13,15 @@ enum Category: Int, CaseIterable {
     case top
     case bottom
     
+    var label: String {
+        switch self {
+        case .top:
+            return "Top"
+        case .bottom:
+            return "Bottom"
+        }
+    }
+    
     var parts: [Part] {
         switch self {
         case .top:
