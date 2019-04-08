@@ -31,6 +31,7 @@
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
+		08FA9C41225AF61B00155648 /* ClosetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA9C40225AF61B00155648 /* ClosetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
+		08FA9C40225AF61B00155648 /* ClosetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				081475802255E5BE00C64E4A /* ClosetVC.swift */,
+				08FA9C40225AF61B00155648 /* ClosetCell.swift */,
 				081475822255E5E900C64E4A /* ClothCell.swift */,
 			);
 			name = Closet;
@@ -256,6 +259,7 @@
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
 				081475812255E5BE00C64E4A /* ClosetVC.swift in Sources */,
 				0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */,
+				08FA9C41225AF61B00155648 /* ClosetCell.swift in Sources */,
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 				08174F542252E9D400117F44 /* ResultVC.swift in Sources */,

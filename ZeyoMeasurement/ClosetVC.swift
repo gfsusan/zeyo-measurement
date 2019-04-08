@@ -8,39 +8,20 @@
 
 import UIKit
 
-class ClosetVC: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ClosetVC: UITableViewController {
     
     @IBOutlet weak var closetCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        closetCollectionView.delegate = self
-
+        
         ZeyoClient.generateRandomClothes() {
-            self.closetCollectionView.reloadData()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         ZeyoClient.getAllClothes {
-            DispatchQueue.main.async {
-                self.closetCollectionView.reloadData()
-            }
         }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ZeyoClient.clothes.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothCell", for: indexPath) as! ClothCell
-        
-        let cloth = ZeyoClient.clothes[indexPath.row]
-        cell.displayContent(cloth: cloth)
-        
-        return cell
     }
     
 
