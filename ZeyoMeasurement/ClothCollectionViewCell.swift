@@ -1,5 +1,5 @@
 //
-//  ClothCell.swift
+//  ClothCollectionViewCell.swift
 //  ZeyoMeasurement
 //
 //  Created by Susan Kim on 04/04/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClothCell: UICollectionViewCell {
+class ClothCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

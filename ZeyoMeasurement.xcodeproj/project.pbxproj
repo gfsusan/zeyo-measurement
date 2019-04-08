@@ -10,7 +10,7 @@
 		0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814757A2255AF6F00C64E4A /* ZeyoClient.swift */; };
 		0814757E2255CFE100C64E4A /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814757D2255CFE100C64E4A /* Cloth.swift */; };
 		081475812255E5BE00C64E4A /* ClosetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081475802255E5BE00C64E4A /* ClosetVC.swift */; };
-		081475832255E5E900C64E4A /* ClothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081475822255E5E900C64E4A /* ClothCell.swift */; };
+		081475832255E5E900C64E4A /* ClothCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081475822255E5E900C64E4A /* ClothCollectionViewCell.swift */; };
 		08174F542252E9D400117F44 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F532252E9D400117F44 /* ResultVC.swift */; };
 		08174F592252F3C500117F44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F582252F3C500117F44 /* ImageCell.swift */; };
 		08174F6022534BAF00117F44 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08174F5F22534BAF00117F44 /* ApplicationSettings.swift */; };
@@ -31,14 +31,14 @@
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
-		08FA9C41225AF61B00155648 /* ClosetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA9C40225AF61B00155648 /* ClosetCell.swift */; };
+		08FA9C41225AF61B00155648 /* ClosetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA9C40225AF61B00155648 /* ClosetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0814757A2255AF6F00C64E4A /* ZeyoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeyoClient.swift; sourceTree = "<group>"; };
 		0814757D2255CFE100C64E4A /* Cloth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
 		081475802255E5BE00C64E4A /* ClosetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetVC.swift; sourceTree = "<group>"; };
-		081475822255E5E900C64E4A /* ClothCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothCell.swift; sourceTree = "<group>"; };
+		081475822255E5E900C64E4A /* ClothCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothCollectionViewCell.swift; sourceTree = "<group>"; };
 		08174F532252E9D400117F44 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		08174F582252F3C500117F44 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		08174F5F22534BAF00117F44 /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
-		08FA9C40225AF61B00155648 /* ClosetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCell.swift; sourceTree = "<group>"; };
+		08FA9C40225AF61B00155648 /* ClosetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				081475802255E5BE00C64E4A /* ClosetVC.swift */,
-				08FA9C40225AF61B00155648 /* ClosetCell.swift */,
-				081475822255E5E900C64E4A /* ClothCell.swift */,
+				08FA9C40225AF61B00155648 /* ClosetTableViewCell.swift */,
+				081475822255E5E900C64E4A /* ClothCollectionViewCell.swift */,
 			);
 			name = Closet;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				084FBCCB2244708000D86C50 /* ARMeasureVC.swift in Sources */,
 				084FBCB822446B6C00D86C50 /* LineNode.swift in Sources */,
 				084FBCB722446B6C00D86C50 /* Modes.swift in Sources */,
-				081475832255E5E900C64E4A /* ClothCell.swift in Sources */,
+				081475832255E5E900C64E4A /* ClothCollectionViewCell.swift in Sources */,
 				084FBCBA22446B6C00D86C50 /* ARControllerExtension.swift in Sources */,
 				08174F592252F3C500117F44 /* ImageCell.swift in Sources */,
 				084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */,
@@ -259,7 +259,7 @@
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
 				081475812255E5BE00C64E4A /* ClosetVC.swift in Sources */,
 				0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */,
-				08FA9C41225AF61B00155648 /* ClosetCell.swift in Sources */,
+				08FA9C41225AF61B00155648 /* ClosetTableViewCell.swift in Sources */,
 				084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */,
 				084FBCAE22446B5C00D86C50 /* Extensions.swift in Sources */,
 				08174F542252E9D400117F44 /* ResultVC.swift in Sources */,
