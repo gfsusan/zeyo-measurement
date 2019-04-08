@@ -17,6 +17,7 @@ class Cloth {
     var parts: [Part]
     var measurements: [Part :  Float]
     var thumbImage: UIImage?
+    var dateAdded: Date = Date()
     
     init(name: String, manager: MeasureManager) {
         self.name = name

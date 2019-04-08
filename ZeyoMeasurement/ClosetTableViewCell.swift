@@ -16,6 +16,8 @@ class ClosetTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
         didSet {
             clothes = ZeyoClient.clothes.filter({ (cloth) -> Bool in
                 return cloth.category == category
+            }).sorted(by: { (this, that) -> Bool in
+                return this.dateAdded > that.dateAdded
             })
         }
     }
