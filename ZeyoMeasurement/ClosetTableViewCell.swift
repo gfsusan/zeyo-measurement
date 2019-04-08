@@ -19,6 +19,7 @@ class ClosetTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
             }).sorted(by: { (this, that) -> Bool in
                 return this.dateAdded > that.dateAdded
             })
+            collectionView.setContentOffset(CGPoint.zero, animated: false)
         }
     }
     var clothes: [Cloth]! {

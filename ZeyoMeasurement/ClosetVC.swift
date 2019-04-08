@@ -22,6 +22,14 @@ class ClosetVC: UITableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        ZeyoClient.getAllClothes {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return Category.count
     }
