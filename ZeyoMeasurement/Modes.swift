@@ -23,9 +23,12 @@ enum Category: Int, CaseIterable {
     }
     
     static func random() -> Category {
-        let randomNumber = Int.random(in: 0 ..< Category.allCases.count)
+        let randomNumber = Int.random(in: 0 ..< count)
         return Category(rawValue: randomNumber)!
     }
+    
+    static var count = Category.allCases.count
+    static var list = Category.allCases
 }
 
 enum Part: Int {
