@@ -22,19 +22,22 @@ class ResultVC: UITableViewController {
     var closetVC: ClosetVC?
     var editButton: UIBarButtonItem?
     
-    var manager: MeasureManager!
-    var measurementList: [(part: Part, length: Float)] = []
+    var cloth: Cloth?
+    var parts: [Part] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(ContentCell.self, forCellReuseIdentifier: "contentCell")
         tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.height
-        measurementList = manager.measurementList
         
         if let _ = arVC {
             print("created upload button")
             uploadButton = makeUploadButton()
+        }
+        
+        if let c = cloth {
+            parts = c.category.parts
         }
         
         setupButtonLayouts()
@@ -64,8 +67,8 @@ class ResultVC: UITableViewController {
     }
     
     @objc func uploadPressed() {
-        let cloth = Cloth(name: Date().description, manager: manager)
-        ZeyoClient.postCloth(cloth: cloth) {
+        guard let c = cloth else { return }
+        ZeyoClient.postCloth(cloth: c) {
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -77,7 +80,7 @@ class ResultVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return measurementList.count + 1
+        return parts.count + 1
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,20 +92,25 @@ class ResultVC: UITableViewController {
     }
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let clothing = cloth else { return UITableViewCell() }
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as? ImageCell
             
-            cell?.thumbImage.image = manager.thumbImage
+            cell?.thumbImage.image = cloth?.thumbImage
             
             return cell!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! ContentCell
-            
-            let measurement = measurementList[indexPath.row - 1]
-            cell.measurementItem = measurement
-            
-            return cell
+            let part = parts[indexPath.row - 1]
+            if let length = clothing.measurements[part] {
+                let measurement = (part, length)
+                cell.measurementItem = measurement
+                
+                return cell
+            }
         }
+        
+        return UITableViewCell()
      }
     
     
