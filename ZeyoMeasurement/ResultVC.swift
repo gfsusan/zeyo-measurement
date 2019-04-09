@@ -8,7 +8,19 @@
 
 import UIKit
 
+public extension UIColor {
+    static let appleBlue = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+}
+
 class ResultVC: UITableViewController {
+    
+    @IBOutlet weak var footerView: UIView!
+    
+    var arVC: ARMeasureVC?
+    var uploadButton: UIButton?
+    
+    var closetVC: ClosetVC?
+    var editButton: UIBarButtonItem?
     
     var manager: MeasureManager!
     var measurementList: [(part: Part, length: Float)] = []
@@ -19,9 +31,39 @@ class ResultVC: UITableViewController {
         tableView.register(ContentCell.self, forCellReuseIdentifier: "contentCell")
         tableView.isScrollEnabled = tableView.contentSize.height > tableView.frame.height
         measurementList = manager.measurementList
+        
+        if let _ = arVC {
+            print("created upload button")
+            uploadButton = makeUploadButton()
+        }
+        
+        setupButtonLayouts()
     }
     
-    @IBAction func uploadPressed(_ sender: Any) {
+    private func setupButtonLayouts() {
+        if let upload = uploadButton {
+            footerView.addSubview(upload)
+            NSLayoutConstraint.activate([
+                upload.widthAnchor.constraint(equalToConstant: 88.0),
+                upload.heightAnchor.constraint(equalToConstant: 44.0),
+                upload.topAnchor.constraint(equalTo: footerView.topAnchor, constant: 8.0),
+                upload.centerXAnchor.constraint(equalTo: footerView.centerXAnchor)
+                ])
+        }
+    }
+    
+    private func makeUploadButton() -> UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .appleBlue
+        button.layer.cornerRadius = 22
+        button.setTitle("업로드", for: .normal)
+        button.addTarget(self, action: #selector(uploadPressed), for: .touchUpInside)
+        
+        return button
+    }
+    
+    @objc func uploadPressed() {
         let cloth = Cloth(name: Date().description, manager: manager)
         ZeyoClient.postCloth(cloth: cloth) {
             self.dismiss(animated: true, completion: nil)

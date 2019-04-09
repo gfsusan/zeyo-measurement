@@ -260,33 +260,7 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="OqF-75-cTX">
                             <rect key="frame" x="0.0" y="272" width="414" height="76"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdJ-fs-w8S">
-                                    <rect key="frame" x="167" y="16" width="80" height="44"/>
-                                    <color key="backgroundColor" red="0.2054367661" green="0.47056722639999998" blue="0.96083205940000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="U4p-pG-z0F"/>
-                                        <constraint firstAttribute="width" constant="80" id="s9B-hk-eig"/>
-                                    </constraints>
-                                    <state key="normal" title="업로드">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="22"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="uploadPressed:" destination="8n3-jc-mPS" eventType="touchUpInside" id="KfF-nQ-zYt"/>
-                                    </connections>
-                                </button>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="xdJ-fs-w8S" firstAttribute="centerX" secondItem="OqF-75-cTX" secondAttribute="centerX" id="RNe-sj-fH9"/>
-                                <constraint firstAttribute="bottom" secondItem="xdJ-fs-w8S" secondAttribute="bottom" constant="16" id="u8U-E4-b7M"/>
-                                <constraint firstItem="xdJ-fs-w8S" firstAttribute="top" secondItem="OqF-75-cTX" secondAttribute="top" constant="16" id="xI5-oD-TND"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="eZM-iA-QEC" customClass="ImageCell" customModule="ZeyoMeasurement" customModuleProvider="target">
@@ -359,6 +333,9 @@
                             <outlet property="delegate" destination="8n3-jc-mPS" id="TMc-ag-IvE"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="footerView" destination="OqF-75-cTX" id="qYH-4B-uPZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V50-UV-xxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
