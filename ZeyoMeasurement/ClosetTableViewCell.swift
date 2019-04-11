@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ * Allows to inform the UITableViewController of the selected a nested cell in a UICollectionView
+ */
 protocol CustomCellDelegate {
     func selected( item: Cloth)
 }
