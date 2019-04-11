@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol CustomCellDelegate {
+    func selected( item: Cloth)
+}
+
 class ClosetTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+     var delegate: CustomCellDelegate?
     
     var category: Category = .top {
         didSet {
@@ -41,6 +47,13 @@ class ClosetTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
         cell.displayContent(cloth: cloth)
                 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            let cloth = clothes[indexPath.item]
+            delegate.selected(item: cloth)
+        }
     }
     
 

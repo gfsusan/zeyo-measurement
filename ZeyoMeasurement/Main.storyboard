@@ -339,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V50-UV-xxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4647.1999999999998" y="-224.4377811094453"/>
+            <point key="canvasLocation" x="2664" y="617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a3V-gb-jvQ">
@@ -469,6 +469,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8n3-jc-mPS" kind="show" identifier="detailSegue" id="lZE-fR-4cZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paV-xM-5yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -480,4 +483,7 @@
         <image name="reset" width="44" height="44"/>
         <image name="t4" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lZE-fR-4cZ"/>
+    </inferredMetricsTieBreakers>
 </document>

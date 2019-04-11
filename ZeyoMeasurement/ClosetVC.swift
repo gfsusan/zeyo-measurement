@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ClosetVC: UITableViewController {
+class ClosetVC: UITableViewController, CustomCellDelegate {
     
     @IBOutlet weak var closetCollectionView: UICollectionView!
     
     var categories = Category.allCases
+    var selectedItem: Cloth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,17 +54,29 @@ class ClosetVC: UITableViewController {
         let category = categories[indexPath.section]
         cell.category = category
         
+        cell.delegate = self
+        
         return cell
     }
 
-    /*
+    func selected(item: Cloth) {
+        self.selectedItem = item
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+
+        if let cloth = selectedItem {
+            let resultVC = segue.destination as? ResultVC
+            resultVC?.cloth = cloth
+        }
     }
-    */
+    
 
 }
