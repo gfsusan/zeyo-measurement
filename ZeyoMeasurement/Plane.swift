@@ -7,11 +7,6 @@
 
 import ARKit
 
-// Convenience extension for colors defined in asset catalog.
-extension UIColor {
-    static let planeColor = UIColor(named: "planeColor")!
-}
-
 class Plane: SCNNode {
     
     let meshNode: SCNNode
