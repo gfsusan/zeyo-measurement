@@ -83,7 +83,7 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
         let plane = SCNPlane(width: width, height: height)
         node.geometry = plane
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor.planeColor// Convenience extension for colors defined in asset catalog.
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.planeColor
         return node
         
     }
