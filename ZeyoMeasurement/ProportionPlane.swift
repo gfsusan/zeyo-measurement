@@ -18,7 +18,7 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Add Plane", for: .normal)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .appleYellow
         button.layer.cornerRadius = 22
         return button
     }()
@@ -45,6 +45,9 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         sceneView.session.run(configuration)
         
         sceneView.session.delegate = self
+        sceneView.delegate = self
+        
+        sceneView.debugOptions = [.showFeaturePoints]
         
         UIApplication.shared.isIdleTimerDisabled = true
     }
@@ -74,12 +77,23 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     func createPlane(ofWidth width: CGFloat, height: CGFloat) -> SCNNode {
+        let node = SCNNode()
+        node.eulerAngles.x = -.pi / 2
+        node.opacity = 0.8
+    
+        let plane = SCNPlane(width: width, height: height)
+        node.geometry = plane
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.planeColor// Convenience extension for colors defined in asset catalog.
+        return node
         
-        return SCNNode()
     }
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        return Optional(SCNNode())
+        if anchor.name == "proportionPlane" {
+            return createPlane(ofWidth: 2.0, height: 2.0)
+        }
+        
+        return nil
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
