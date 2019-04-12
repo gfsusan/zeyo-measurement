@@ -72,18 +72,24 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let hitTest = sceneView.hitTest(aimView.center, types: .existingPlane)
         guard let hitTestResult = hitTest.first else { return }
         
-        let anchor = ARAnchor(name: "proportionPlane", transform: hitTestResult.worldTransform)
-        sceneView.session.add(anchor: anchor)
+//        let anchor = ARAnchor(name: "proportionPlane", transform: hitTestResult.worldTransform)
+//        sceneView.session.add(anchor: anchor)
+        let node = createPlane(ofWidth: 1.5, height: 1.5)
+        let transform = hitTestResult.worldTransform
+        let position = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+        node.position = position
+        
+        sceneView.scene.rootNode.addChildNode(node)
     }
     
     func createPlane(ofWidth width: CGFloat, height: CGFloat) -> SCNNode {
-        let node = SCNNode()
-        node.eulerAngles.x = -.pi / 2
-        node.opacity = 0.8
-    
         let plane = SCNPlane(width: width, height: height)
-        node.geometry = plane
+        let node = SCNNode(geometry: plane)
+    
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.planeColor
+        node.opacity = 0.8
+        node.eulerAngles.x = -.pi / 2
+
         return node
         
     }
@@ -92,7 +98,6 @@ class ProportionPlane: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         if anchor.name == "proportionPlane" {
             return createPlane(ofWidth: 2.0, height: 2.0)
         }
-        
         return nil
     }
     
