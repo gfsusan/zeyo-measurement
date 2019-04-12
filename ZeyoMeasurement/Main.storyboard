@@ -49,11 +49,32 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV8-SB-hWC">
+                                <rect key="frame" x="157" y="188" width="100" height="44"/>
+                                <color key="backgroundColor" red="0.2054367661" green="0.47056722639999998" blue="0.96083205940000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="JSM-ma-amC"/>
+                                    <constraint firstAttribute="height" constant="44" id="RVq-19-R3t"/>
+                                </constraints>
+                                <state key="normal" title="Test Plane">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="225-3x-Zng" kind="presentation" id="tsg-x0-9to"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cV8-SB-hWC" firstAttribute="centerX" secondItem="ocA-Uq-ZQ1" secondAttribute="centerX" id="Fgp-z5-O4L"/>
                             <constraint firstItem="DMY-oi-oeI" firstAttribute="centerY" secondItem="ocA-Uq-ZQ1" secondAttribute="centerY" id="Ubb-v6-3I9"/>
                             <constraint firstItem="DMY-oi-oeI" firstAttribute="centerX" secondItem="ocA-Uq-ZQ1" secondAttribute="centerX" id="aBy-qN-OV9"/>
+                            <constraint firstItem="cV8-SB-hWC" firstAttribute="top" secondItem="rqw-7e-TXg" secondAttribute="bottom" constant="100" id="wsc-Mk-tzm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Yz-Ga-L7n">
@@ -70,6 +91,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deo-fY-Flb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3098.4000000000001" y="-222.63868065967017"/>
+        </scene>
+        <!--Proportion Plane-->
+        <scene sceneID="qOR-KE-spj">
+            <objects>
+                <viewController id="225-3x-Zng" customClass="ProportionPlane" customModule="ZeyoMeasurement" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0ps-wM-xYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="FCc-cw-aVY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LUO-vy-Tt1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-yY-Mjs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iFF-yY-Mjs" firstAttribute="top" secondItem="LUO-vy-Tt1" secondAttribute="top" id="8ol-WT-ffz"/>
+                            <constraint firstAttribute="bottom" secondItem="iFF-yY-Mjs" secondAttribute="bottom" id="Oe4-Jo-h8d"/>
+                            <constraint firstItem="iFF-yY-Mjs" firstAttribute="leading" secondItem="LUO-vy-Tt1" secondAttribute="leading" id="R0n-o5-oGf"/>
+                            <constraint firstAttribute="trailing" secondItem="iFF-yY-Mjs" secondAttribute="trailing" id="gNn-HH-AMv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="iFF-yY-Mjs" id="tsE-mT-I5I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eet-TL-RIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951" y="-586"/>
         </scene>
         <!--MeasureVC-->
         <scene sceneID="gpu-NC-Kut">
@@ -247,7 +300,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-fh-IQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Xd1-Rd-srm" customClass="SCNScene"/>
             </objects>
-            <point key="canvasLocation" x="3847.1999999999998" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="3951" y="161"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="eRM-pW-Sf2">
@@ -339,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V50-UV-xxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2664" y="617"/>
+            <point key="canvasLocation" x="2587" y="969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a3V-gb-jvQ">
@@ -484,6 +537,6 @@
         <image name="t4" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lZE-fR-4cZ"/>
+        <segue reference="Y4a-pa-WjC"/>
     </inferredMetricsTieBreakers>
 </document>

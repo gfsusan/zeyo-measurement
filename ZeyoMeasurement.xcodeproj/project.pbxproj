@@ -28,6 +28,7 @@
 		084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCCE2244710E00D86C50 /* AppDelegate.swift */; };
 		084FBCD32248A56D00D86C50 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FBCD22248A56D00D86C50 /* SelectVC.swift */; };
 		0893F16B22548469002B77BC /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893F16A22548468002B77BC /* ContentCell.swift */; };
+		08A66352225F402800284B89 /* ProportionPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A66351225F402800284B89 /* ProportionPlane.swift */; };
 		08DB9C8F224A274200F9A9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DB9C8E224A274200F9A9FB /* Assets.xcassets */; };
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
@@ -58,6 +59,7 @@
 		084FBCCE2244710E00D86C50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		084FBCD22248A56D00D86C50 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
 		0893F16A22548468002B77BC /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		08A66351225F402800284B89 /* ProportionPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProportionPlane.swift; sourceTree = "<group>"; };
 		08DB9C8E224A274200F9A9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				084FBCBF22446C7600D86C50 /* Main.storyboard */,
 				0814757F2255E59600C64E4A /* Closet */,
 				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
+				08A66350225F400E00284B89 /* Proportion Plane */,
 				084FBCCA2244708000D86C50 /* ARMeasureVC.swift */,
 				084FBCB322446B6C00D86C50 /* ARControllerExtension.swift */,
 				08174F572252F3AC00117F44 /* Result */,
@@ -170,6 +173,14 @@
 				084FBCA922446B5C00D86C50 /* Extensions.swift */,
 			);
 			name = SceneKit;
+			sourceTree = "<group>";
+		};
+		08A66350225F400E00284B89 /* Proportion Plane */ = {
+			isa = PBXGroup;
+			children = (
+				08A66351225F402800284B89 /* ProportionPlane.swift */,
+			);
+			name = "Proportion Plane";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				084FBCB922446B6C00D86C50 /* Plane.swift in Sources */,
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
 				08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */,
+				08A66352225F402800284B89 /* ProportionPlane.swift in Sources */,
 				084FBCCF2244710E00D86C50 /* AppDelegate.swift in Sources */,
 				081475812255E5BE00C64E4A /* ClosetVC.swift in Sources */,
 				0814757B2255AF6F00C64E4A /* ZeyoClient.swift in Sources */,
