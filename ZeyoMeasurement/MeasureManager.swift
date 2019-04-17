@@ -52,7 +52,7 @@ class MeasureManager {
         } else if currentPart == bodyParts.last! {
             return .done
         } else {    // 다음 Part가 있으면 해당 Part 반환
-            let index = bodyParts.index(of: currentPart)! + 1
+            let index = bodyParts.firstIndex(of: currentPart)! + 1
             return bodyParts[index]
         }
     }
@@ -63,7 +63,7 @@ class MeasureManager {
         } else if currentPart == .done {
             return bodyParts.last!
         } else {
-            let index = bodyParts.index(of: currentPart)! - 1
+            let index = bodyParts.firstIndex(of: currentPart)! - 1
             return bodyParts[index]
         }
     }
