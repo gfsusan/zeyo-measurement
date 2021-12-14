@@ -26,6 +26,7 @@ class ContentCell: UITableViewCell, UITextFieldDelegate {
     }()
     
     let lengthTextField: UITextField = {
+        
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.text = "\(45.2)"

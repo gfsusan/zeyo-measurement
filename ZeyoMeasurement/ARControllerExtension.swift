@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension ARMeasureVC {
-    
     func switchUnit(to unit: Unit) {
         self.currentUnit = unit
     }
@@ -61,53 +60,57 @@ extension ARMeasureVC {
      Update the UI based on current state
      */
     func updateUI() {
+        let loadpage  = LoadPage.init()
+
         self.setInstructionLabel()
+        
         
         if let _ = manager.previousPart() {
             if manager.state == .started {
-                previousButton.isEnabled = false
+                loadpage.previousButton.isEnabled = false
             } else {
-                previousButton.isEnabled = true
+                loadpage.previousButton.isEnabled = true
             }
         } else {
-            previousButton.isEnabled = false
+            loadpage.previousButton.isEnabled = false
         }
         
         if let currentMeasurement = currentMeasurementAnchor {
             if let _ = currentMeasurement.firstAnchor, let _ = currentMeasurement.secondAnchor {
-                createPointButton.isEnabled = false
-                nextButton.isEnabled = true
+                loadpage.createPointButton.isEnabled = false
+                loadpage.nextButton.isEnabled = true
             } else {
-                createPointButton.isEnabled = true
-                nextButton.isEnabled = false
+                loadpage.createPointButton.isEnabled = true
+                loadpage.nextButton.isEnabled = false
             }
             
             if let _ = currentMeasurement.firstAnchor {
                 UIView.animate(withDuration: 0.5) {
-                    self.resetButton.alpha = 1.0
-                    self.resetButton.isHidden = false
+                    loadpage.resetButton.alpha = 1.0
+                    loadpage.resetButton.isHidden = false
                 }
             } else {
-                self.resetButton.alpha = 0.0
-                self.resetButton.isHidden = true
+                loadpage.resetButton.alpha = 0.0
+                loadpage.resetButton.isHidden = true
             }
         }
         
         // call sequence must be maintained
-        aimView.isHidden = !createPointButton.isEnabled
+        loadpage.aimView.isHidden = !loadpage.createPointButton.isEnabled
         
         if manager.currentPart == .done {
-            nextButton.isEnabled = false
-            createPointButton.isEnabled = true
-            createPointButton.setTitle("촬영", for: .normal)
-            createPointButton.removeTarget(self, action: #selector(createPoint), for: .touchUpInside)
-            createPointButton.addTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
+            loadpage.nextButton.isEnabled = false
+            loadpage.createPointButton.isEnabled = true
+            loadpage.createPointButton.setTitle("촬영", for: .normal)
+            loadpage.createPointButton.removeTarget(self, action: #selector(createPoint), for: .touchUpInside)
+            loadpage.createPointButton.addTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
         } else {
-            createPointButton.setTitle("점 찍기", for: .normal)
-            createPointButton.removeTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
-            createPointButton.addTarget(self, action: #selector(createPoint), for: .touchUpInside)
+            loadpage.createPointButton.setTitle("점 찍기", for: .normal)
+            loadpage.createPointButton.removeTarget(self, action: #selector(finishMeasurement), for: .touchUpInside)
+            loadpage.createPointButton.addTarget(self, action: #selector(createPoint), for: .touchUpInside)
         }
-        
+        loadpage.instructionView.setNeedsLayout()
+        loadpage.instructionView.layoutIfNeeded()
     }
     
     /**
@@ -135,7 +138,9 @@ extension ARMeasureVC {
     }
     
     func setInstructionLabel() {
-        instructionView.alpha = 0.0
+        let loadpage  = LoadPage.init()
+
+        //instructionView.alpha = 0.0
 
         // Show the body part that the user is measuring in a UILabel
         if manager.currentPart == .done {
@@ -145,35 +150,38 @@ extension ARMeasureVC {
                 labelText += "\n\(part.label): "
                 labelText += measurement.lengthLabel
             }
+            loadpage.instructionText = labelText
             
-            instructionLabel.text = labelText
         } else {
             switch (manager.state) {
             case .initialized:
-                instructionLabel.text = "\(manager.currentPart.label) 길이의 시작점을 찍어주세요."
+                 loadpage.instructionText = "\(manager.currentPart.label) 길이의 시작점을 찍어주세요."
             case .started:
-                instructionLabel.text = "\(manager.currentPart.label) 길이의 끝점을 찍어주세요."
+                loadpage.instructionText = "\(manager.currentPart.label) 길이의 끝점을 찍어주세요."
             case .finished:
                 if let currentMeasurement = currentMeasurementAnchor {
-                            instructionLabel.text = "\(currentMeasurement.lengthLabel)\n"
+                            loadpage.instructionText = "\(currentMeasurement.lengthLabel)\n"
                                         + "양 끝의 동그라미를 꾹 누르면 수정할 수 있습니다"
                 }
             }
         }
         
-        instructionLabel.sizeToFit()
+        //instructionLabel.sizeToFit()
         
         UIView.animate(withDuration: 0.5) {
-            self.instructionView.alpha = 1.0
+            loadpage.instructionView.alpha = 1.0
         }
+        
     }
     
     func showAimImage() {
-        aimView.isHidden = false
+        let loadpage  = LoadPage.init()
+        loadpage.aimView.isHidden = false
     }
     
     func hideAimImage() {
-        aimView.isHidden = true
+        let loadpage  = LoadPage.init()
+        loadpage.aimView.isHidden = true
     }
     
     func setupGestureRecognizer() {

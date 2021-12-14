@@ -32,6 +32,7 @@
 		08DB9C94224B4C6500F9A9FB /* MeasureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */; };
 		08DB9C96224C6D1100F9A9FB /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB9C95224C6D1100F9A9FB /* LabelNode.swift */; };
 		08FA9C41225AF61B00155648 /* ClosetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA9C40225AF61B00155648 /* ClosetTableViewCell.swift */; };
+		B09B95E6228BADC2007E0B8D /* LoadPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09B95E5228BADC2007E0B8D /* LoadPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		08DB9C93224B4C6500F9A9FB /* MeasureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureManager.swift; sourceTree = "<group>"; };
 		08DB9C95224C6D1100F9A9FB /* LabelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
 		08FA9C40225AF61B00155648 /* ClosetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetTableViewCell.swift; sourceTree = "<group>"; };
+		B09B95E5228BADC2007E0B8D /* LoadPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +138,11 @@
 				08174F5F22534BAF00117F44 /* ApplicationSettings.swift */,
 				084FBCC022446C7600D86C50 /* LaunchScreen.storyboard */,
 				084FBCBF22446C7600D86C50 /* Main.storyboard */,
-				0814757F2255E59600C64E4A /* Closet */,
 				084FBCD22248A56D00D86C50 /* SelectVC.swift */,
-				084FBCCA2244708000D86C50 /* ARMeasureVC.swift */,
 				084FBCB322446B6C00D86C50 /* ARControllerExtension.swift */,
+				084FBCCA2244708000D86C50 /* ARMeasureVC.swift */,
+				B09B95E5228BADC2007E0B8D /* LoadPage.swift */,
+				0814757F2255E59600C64E4A /* Closet */,
 				08174F572252F3AC00117F44 /* Result */,
 				084FBCC622446CB600D86C50 /* SceneKit */,
 				084FBCC322446C9900D86C50 /* Apple */,
@@ -253,6 +256,7 @@
 				084FBCBA22446B6C00D86C50 /* ARControllerExtension.swift in Sources */,
 				08174F592252F3C500117F44 /* ImageCell.swift in Sources */,
 				084FBCB622446B6C00D86C50 /* MeasurementAnchor.swift in Sources */,
+				B09B95E6228BADC2007E0B8D /* LoadPage.swift in Sources */,
 				0893F16B22548469002B77BC /* ContentCell.swift in Sources */,
 				084FBCB922446B6C00D86C50 /* Plane.swift in Sources */,
 				084FBCBB22446B6C00D86C50 /* Utilities.swift in Sources */,
@@ -393,13 +397,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				DEVELOPMENT_TEAM = 5E9645MF64;
 				INFOPLIST_FILE = ZeyoMeasurement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.suzenyada.ZeyoMeasurement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeyo.ZeyoMeasurement1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,13 +415,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZLXC439TG;
+				DEVELOPMENT_TEAM = 5E9645MF64;
 				INFOPLIST_FILE = ZeyoMeasurement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.suzenyada.ZeyoMeasurement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeyo.ZeyoMeasurement1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

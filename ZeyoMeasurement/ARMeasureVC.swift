@@ -20,17 +20,30 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var sceneView: ARSCNView!
-    
-    @IBOutlet weak var previousButton: UIButton!
-    @IBOutlet weak var createPointButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    
-    @IBOutlet weak var instructionView: UIVisualEffectView!
-    @IBOutlet weak var instructionLabel: UILabel!
+//
+//    @IBOutlet weak var previousButton1: UIButton!
+//    @IBOutlet weak var createPointButton1: UIButton!
+//    @IBOutlet weak var nextButton1: UIButton!
+//    @IBOutlet weak var resetButton1: UIButton!
+//
+//    @IBOutlet weak var instructionView1: UIVisualEffectView!
+//    @IBOutlet weak var instructionLabel1: UILabel!
+    var instructionLabel = UILabel.init(frame: CGRect.init())
+    var instructionView = UIVisualEffectView.init(frame: CGRect.init())
+    var aimView = UIImageView(image: UIImage(named: "icPinPoint.pdf"))
+    var resetButton =  UIButton.init(frame: CGRect.init())
+    var previousButton =  UIButton.init(frame: CGRect.init())
+    var createPointButton = UIButton.init(frame: CGRect.init())
+    var nextButton = UIButton.init(frame: CGRect.init())
+    var guideButton = UIButton.init(frame: CGRect.init())
+    var cancelButton = UIButton.init(frame: CGRect.init())
+    var itemLabel = UILabel.init(frame: CGRect.init())
+    var instructionText = ""
+    var itemText = ""
+
     private var sessionInfoText: String = ""
     
-    @IBOutlet weak var aimView: UIImageView!
+//    @IBOutlet weak var aimView1: UIImageView!
     
     private let firstName = "firstAnchor"
     private let secondName = "secondAnchor"
@@ -69,10 +82,17 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        let loadPage : LoadPage = .init()
+        loadPage.maesurePage(pageView: sceneView)
+        
         setupGestureRecognizer()
         switchUnit(to: .centimeter)
         updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+ 
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,15 +104,18 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    @IBAction func createPointButtonPressed(_ sender: UIButton) {
+//    @IBAction func createPointButtonPressed(_ sender: UIButton) {
+    @objc func createPointButtonPressed(_ sender: UIButton!) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.allowUserInteraction,.curveEaseOut], animations: {
             sender.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { (value) in
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.allowUserInteraction,.curveEaseIn], animations: {
                 sender.transform = CGAffineTransform.identity
             }) { (value) in
+                
             }
         }
+//        createPoint()
     }
     
     @objc func createPoint() {
@@ -154,28 +177,30 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         return snapshot
     }
     
-    @IBAction func previousButtonPressed(_ sender: Any) {
+//    @IBAction func previousButtonPressed(_ sender: Any) {
+    @objc func previousButtonPressed(_ sender: Any) {
         if let previousBodyPart = manager?.previousPart() {
             switchMode(to: .initialized, measuring: previousBodyPart)
         }
     }
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
+//    @IBAction func nextButtonPressed(_ sender: Any) {
+    @objc func nextButtonPressed(_ sender: Any) {
         if let nextBodyPart = manager?.nextPart() {
             switchMode(to: .initialized, measuring: nextBodyPart)
         } else {
             // all measurements were successfully made
             // proceed to next step
-            
         }
     }
     
-    @IBAction func resetButtonPressed(_ sender: Any) {
+//    @IBAction func resetButtonPressed(_ sender: Any) {
+    @objc func resetButtonPressed(_ sender: Any) {
         // this sequence must be maintained
         clearSceneView()
         
         manager.removeCurrentMeasurement()
-        switchMode(to: .initialized, measuring: manager.currentPart)        
+        switchMode(to: .initialized, measuring: manager.currentPart)
     }
     
     @objc func longPressed(recognizer: UILongPressGestureRecognizer) {
@@ -244,12 +269,14 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         }
     }
     
-    @IBAction func closeButtonPressed(_ sender: Any) {
+//    @IBAction func closeButtonPressed(_ sender: Any) {
+    @objc func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - ARSCNViewDelegate
     
+//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         // Execute the correct code depending on the name of the newly created anchor.
         // Add more if statesments for new models eg. if(anchor.name == "house")...
@@ -292,6 +319,7 @@ class ARMeasureVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     /// - Tag: PlaceARContent
+//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         // Place content only for anchors found by plane detection.
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }

@@ -85,161 +85,18 @@
                                     <outlet property="delegate" destination="eIu-np-qLy" id="DLW-Wy-cE2"/>
                                 </connections>
                             </arscnView>
-                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-PF-rsd">
-                                <rect key="frame" x="80.5" y="104" width="260" height="38"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qY8-rk-rbB">
-                                    <rect key="frame" x="0.0" y="0.0" width="260" height="38"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure the length of blahblah" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7B-vy-ezp">
-                                            <rect key="frame" x="8" y="8" width="237.5" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="6YO-GV-gMs"/>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="Fwo-5E-ZPm"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="E7B-vy-ezp" secondAttribute="trailing" constant="14" id="9zo-3K-oaZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="E7B-vy-ezp" secondAttribute="bottom" constant="8" id="bkp-Hs-C1T"/>
-                                        <constraint firstItem="E7B-vy-ezp" firstAttribute="leading" secondItem="qY8-rk-rbB" secondAttribute="leading" constant="8" id="fQ9-qp-r8V"/>
-                                        <constraint firstItem="E7B-vy-ezp" firstAttribute="top" secondItem="qY8-rk-rbB" secondAttribute="top" constant="8" id="u7l-rx-2JW"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="light"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </visualEffectView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="cSe-eq-NAh">
-                                <rect key="frame" x="52" y="742" width="310" height="88"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73Y-CK-65k">
-                                        <rect key="frame" x="0.0" y="11" width="66" height="66"/>
-                                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="a2f-16-sMi"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="ig1-nf-fw5"/>
-                                        </constraints>
-                                        <state key="normal" title="이전"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="33"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="previousButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="ARI-vX-4ds"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTa-P7-fIN">
-                                        <rect key="frame" x="111" y="0.0" width="88" height="88"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="Tpx-8q-iR8"/>
-                                            <constraint firstAttribute="height" constant="88" id="g0o-ns-7Cx"/>
-                                        </constraints>
-                                        <state key="normal" title="점 찍기"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="44"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="createPointButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="Sqp-yV-LU3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-GS-4De">
-                                        <rect key="frame" x="244" y="11" width="66" height="66"/>
-                                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="OQL-fT-AE6"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="cHQ-ew-mXJ"/>
-                                        </constraints>
-                                        <state key="normal" title="다음"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="33"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="whT-Zw-Fkz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aim" translatesAutoresizingMaskIntoConstraints="NO" id="it1-nx-ufO">
-                                <rect key="frame" x="185" y="426" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="GPa-Uk-oeO"/>
-                                    <constraint firstAttribute="height" constant="44" id="PK3-Ro-ml9"/>
-                                    <constraint firstAttribute="width" constant="44" id="bPd-Hq-dpz"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRk-Hk-7wG">
-                                <rect key="frame" x="74" y="712" width="22" height="22"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="BSW-Yr-207"/>
-                                    <constraint firstAttribute="width" constant="22" id="ElT-4v-A4Y"/>
-                                </constraints>
-                                <state key="normal" title="초기화" image="reset"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="11"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="resetButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="q29-7l-iVb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-df-Fao">
-                                <rect key="frame" x="8" y="104" width="22" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="Voc-oM-z7p"/>
-                                    <constraint firstAttribute="height" constant="22" id="rSQ-0f-7Fl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="closeButtonPressed:" destination="eIu-np-qLy" eventType="touchUpInside" id="NDX-Nl-B8G"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kHq-PF-rsd" firstAttribute="top" secondItem="YVH-fr-L4V" secondAttribute="top" constant="16" id="0wn-26-OPs"/>
-                            <constraint firstItem="it1-nx-ufO" firstAttribute="centerX" secondItem="ZRt-Yj-zIU" secondAttribute="centerX" id="22h-79-2YD"/>
                             <constraint firstItem="qx1-oK-MGp" firstAttribute="leading" secondItem="YVH-fr-L4V" secondAttribute="leading" id="B2h-uK-f97"/>
                             <constraint firstAttribute="top" secondItem="qx1-oK-MGp" secondAttribute="top" id="Op2-bh-p57"/>
                             <constraint firstItem="YVH-fr-L4V" firstAttribute="trailing" secondItem="qx1-oK-MGp" secondAttribute="trailing" id="QfF-Es-r2K"/>
-                            <constraint firstItem="cSe-eq-NAh" firstAttribute="centerX" secondItem="ZRt-Yj-zIU" secondAttribute="centerX" id="Y7x-6t-obr"/>
-                            <constraint firstItem="YVH-fr-L4V" firstAttribute="bottom" secondItem="cSe-eq-NAh" secondAttribute="bottom" constant="32" id="aqO-bw-g0t"/>
-                            <constraint firstItem="cSe-eq-NAh" firstAttribute="top" secondItem="GRk-Hk-7wG" secondAttribute="bottom" constant="8" id="crd-PL-uJK"/>
-                            <constraint firstItem="BAv-df-Fao" firstAttribute="leading" secondItem="YVH-fr-L4V" secondAttribute="leading" constant="8" id="eKr-yv-dOr"/>
                             <constraint firstAttribute="bottom" secondItem="qx1-oK-MGp" secondAttribute="bottom" id="hAX-3o-Fgy"/>
-                            <constraint firstItem="E7B-vy-ezp" firstAttribute="centerX" secondItem="qx1-oK-MGp" secondAttribute="centerX" id="hN4-qA-sbm"/>
-                            <constraint firstItem="it1-nx-ufO" firstAttribute="centerY" secondItem="ZRt-Yj-zIU" secondAttribute="centerY" id="lLd-bU-CfK"/>
-                            <constraint firstItem="BAv-df-Fao" firstAttribute="top" secondItem="kHq-PF-rsd" secondAttribute="top" id="qBl-uu-JBM"/>
-                            <constraint firstItem="GRk-Hk-7wG" firstAttribute="centerX" secondItem="73Y-CK-65k" secondAttribute="centerX" id="yb8-mv-cvg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVH-fr-L4V"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Pt-Jj-TBy"/>
                     <connections>
-                        <outlet property="aimView" destination="it1-nx-ufO" id="YLA-ob-KhF"/>
-                        <outlet property="createPointButton" destination="eTa-P7-fIN" id="KZg-kF-Hgz"/>
-                        <outlet property="instructionLabel" destination="E7B-vy-ezp" id="6L9-Mn-odS"/>
-                        <outlet property="instructionView" destination="kHq-PF-rsd" id="ex7-R7-IHf"/>
-                        <outlet property="nextButton" destination="Bbs-GS-4De" id="4pt-KA-LOR"/>
-                        <outlet property="previousButton" destination="73Y-CK-65k" id="YC8-rG-0eE"/>
-                        <outlet property="resetButton" destination="GRk-Hk-7wG" id="LDO-3K-elT"/>
                         <outlet property="sceneView" destination="qx1-oK-MGp" id="hfg-XM-OYD"/>
                         <segue destination="8n3-jc-mPS" kind="show" identifier="measurementResultSegue" id="Y4a-pa-WjC"/>
                     </connections>
@@ -247,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-fh-IQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Xd1-Rd-srm" customClass="SCNScene"/>
             </objects>
-            <point key="canvasLocation" x="3847.1999999999998" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="3846.376811594203" y="-222.99107142857142"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="eRM-pW-Sf2">
@@ -479,11 +336,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aim" width="980" height="980"/>
-        <image name="reset" width="44" height="44"/>
         <image name="t4" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lZE-fR-4cZ"/>
+        <segue reference="Y4a-pa-WjC"/>
     </inferredMetricsTieBreakers>
 </document>
